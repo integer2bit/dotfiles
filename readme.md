@@ -1,21 +1,30 @@
 # My personal config file
 
-## Installation order
-
-1. tmux and tmux plugins
-2. zsh
-3. neovim dependencies
-4. neovim plugins
-
-## include config
-
 - neovim(in ArchLinux)
   - intergrate with obsidian
-- wezterm
-- .wslconfig
 - tmux
 - aria2
 - zsh
+- mpv
+- i3(with i3status)
+
+## Installation 
+
+```bash
+cd ~
+git clone https://github.com/integer2bit/dotfiles
+cd dotfiles
+stow -t ~ */
+```
+If you have config file exists, there may some erros. Backup your original files and remove them. Then try `stow -t ~ */` again.
+
+Or you can also stow single directory like stow zsh, this will only link the contain package data.
+
+## font
+
+- ttf-jetbrains-mono
+- ttf-jetbrains-mono-nerd
+- noto-fonts-cjk
 
 ## tmux
 
@@ -29,12 +38,6 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 
 - prefix set \<C-Space\>
 - \<prefix\>r reload tmux config
-
-## wezterm
-
-### dependencies
-
-- nerd-fonts: ttf-jetbrains-mono-nerd
 
 ## zsh dependencies
 
@@ -64,3 +67,29 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - cmake
 - texlive (for vimtex)
 - tree-sitter-cli (for latex parser)
+
+## i3
+### dependencies
+
+- picom(compositor)
+- feh(wallpaper)
+- xorg(xorg-xrandr)
+- rofi (app launcher)
+- acpilight (xbacklight excutable provided)
+- spectacle (screenshot)
+- kitty (terminal)
+- network-manager-applet (wireless tray)
+- fcitx5 (input method)
+- i3config
+
+## mpv
+
+### Plugins
+- autoload (official)
+- [recent](https://github.com/hacel/recent)
+  hotkeys:`CTRL+r`
+- [thumbfast](https://github.com/po5/thumbfast/tree/master)
+- [osc-mordern-f](https://github.com/FinnRaze/mpv-osc-modern-f) 
+- ytdl_hook [reference](https://github.com/hooke007/MPV_lazy/blob/main/portable_config/script-opts/ytdl_hook.conf)
+### play stram vedio with Tampermonkey plugins
+[Play with mpv](https://github.com/LuckyPuppy514/Play-With-MPV)
