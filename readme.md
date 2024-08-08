@@ -73,14 +73,14 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 
 - picom(compositor)
 - feh(wallpaper)
-- xorg(xorg-xrandr)
+- xorg(xorg-xrandr and xorg config)
 - rofi (app launcher)
+- i3lock-fancy(better lock style)
 - acpilight (xbacklight excutable provided)
 - spectacle (screenshot)
 - kitty (terminal)
 - network-manager-applet (wireless tray)
 - fcitx5 (input method)
-- i3config
 
 ## mpv
 
