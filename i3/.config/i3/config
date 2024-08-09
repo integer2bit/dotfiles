@@ -55,7 +55,7 @@ bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 5
 # Win kyemap
 bindsym Mod4+e exec nautilus
 bindsym Mod4+l exec i3lock-fancy --nofork
-bindsym Mod4+s exec systemctl suspend
+bindsym Mod4+s exec i3lock-fancy --nofork & systemctl suspend 
 bindsym Mod4+h exec systemctl hibernate
 
 # screenshot tools
