@@ -45,13 +45,15 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# switch audio output
+bindsym Mod4+t exec bash ~/.config/i3/switch_audio.sh
 
 # brightness adjust
 bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 5 
 bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 5
 
 # Win kyemap
-bindsym Mod4+e exec pcmanfm
+bindsym Mod4+e exec nautilus
 bindsym Mod4+l exec i3lock-fancy --nofork
 bindsym Mod4+h exec systemctl hibernate
 

@@ -81,6 +81,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - kitty (terminal)
 - network-manager-applet (wireless tray)
 - fcitx5 (input method)
+- nautilus (gnome file manager)
 
 ## mpv
 
