@@ -58,7 +58,7 @@ bindsym Mod4+l exec i3lock-fancy --nofork
 bindsym Mod4+h exec systemctl hibernate
 
 # screenshot tools
-bindsym Print exec spectacle -f
+bindsym Print exec spectacle -r
 # rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun -dpi 192
 bindsym $mod+space exec --no-startup-id rofi -show combi -dpi 192
@@ -113,8 +113,8 @@ bindsym $mod+Shift+Right move right
 # bindsym $mod+h split h
 
 # split in vertical orientation
-# bindsym $mod+v split h
-# bindsym $mod+Shift+v split v
+bindsym $mod+v split h
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
