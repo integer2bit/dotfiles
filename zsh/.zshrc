@@ -110,7 +110,7 @@ alias cl='clear'
 alias cdob='cd $HOME/Documents/obsidian/'
 alias rcmount='rclone mount onedrive:/ ~/Cloud/onedrive/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode full --daemon --cache-dir ~/Cloud/cache'
 alias sing='cd $HOME/Applications/sing-box && sudo ./sing-box run -c client.json'
-alias miho='sudo ~/Applications/mihomo/mihomo -f ~/Applications/mihomo/mihomo.yml'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
