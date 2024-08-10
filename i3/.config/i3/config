@@ -39,7 +39,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# auto turn off screen
+exec --no-startup-id xset dpms 3600 7200
+
 # Use pactl to adjust volume in PulseAudio.
+# unmute audio default
+exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ 0
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
