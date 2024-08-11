@@ -39,9 +39,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# auto turn off screen
-exec --no-startup-id xset dpms 3600 7200
-
 # Use pactl to adjust volume in PulseAudio.
 # unmute audio default
 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ 0
@@ -58,10 +55,10 @@ bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 5
 
 # Win kyemap
-bindsym Mod4+e exec nautilus
+bindsym Mod4+e exec env GDK_SCALE=2 nautilus
 bindsym Mod4+l exec i3lock-fancy --nofork
 bindsym Mod4+s exec i3lock-fancy --nofork & systemctl suspend 
-bindsym Mod4+h exec systemctl hibernate
+bindsym Mod4+h exec i3lock-fancy --nofork & systemctl hibernate
 
 # screenshot tools
 bindsym Print exec spectacle -r
