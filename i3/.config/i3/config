@@ -33,7 +33,7 @@ exec_always --no-startup-id fcitx5
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -f JetBrains-Mono-Regular
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -56,9 +56,9 @@ bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 5
 
 # Win kyemap
 bindsym Mod4+e exec env GDK_SCALE=2 nautilus
-bindsym Mod4+l exec i3lock-fancy --nofork
-bindsym Mod4+s exec i3lock-fancy --nofork & systemctl suspend 
-bindsym Mod4+h exec i3lock-fancy --nofork & systemctl hibernate
+bindsym Mod4+l exec i3lock-fancy -f JetBrains-Mono-Regular
+bindsym Mod4+s exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl suspend 
+bindsym Mod4+h exec systemctl hibernate
 
 # screenshot tools
 bindsym Print exec spectacle -r
