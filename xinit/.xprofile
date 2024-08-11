@@ -1,0 +1,2 @@
+xset dpms 1800 2700 3600
+setxkbmap -option ctrl:nocaps

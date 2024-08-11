@@ -23,7 +23,8 @@ font pango:JetBrainsMono Nerd Font Mono 12
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/.config/i3/Yanami.jpg
 # map capslock to ctrl
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+# exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 exec_always --no-startup-id fcitx5
