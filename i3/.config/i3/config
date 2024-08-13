@@ -67,6 +67,7 @@ bindsym Print exec spectacle -r
 bindsym $mod+d exec --no-startup-id rofi -show drun -dpi 192
 bindsym $mod+space exec --no-startup-id rofi -show combi -dpi 192
 bindsym $mod+Tab exec --no-startup-id rofi -show window -dpi 192
+bindsym Mod4+period exec --no-startup-id rofi -modi emoji -show emoji -dpi 192
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

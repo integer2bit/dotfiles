@@ -108,7 +108,7 @@ alias ls='ls --color'
 alias la='ls -a'
 alias cl='clear'
 alias cdob='cd $HOME/Documents/obsidian/'
-alias rcmount='rclone mount onedrive:/ ~/Cloud/onedrive/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode writes --daemon'
+alias rcmount='rclone mount onedrive:/ ~/Cloud/onedrive/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode full --daemon'
 alias sing='cd $HOME/Applications/sing-box && sudo ./sing-box run -c client.json'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
