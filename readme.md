@@ -75,7 +75,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - feh(wallpaper)
 - xorg(xorg-xrandr and xorg config)
 - rofi (app launcher)
-- rofi-emoji (xdotool, xclip need)
+- rofi-emoji (xdotool, xclip needed)
 - i3lock-fancy(better lock style)
 - acpilight (xbacklight excutable provided)
 - spectacle (screenshot)
