@@ -62,6 +62,9 @@ return {
 					},
 					initial_mode = "normal",
 				},
+				marks = {
+					path_display = { "smart" },
+				},
 			},
 		})
 
@@ -85,7 +88,8 @@ return {
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "buffers list" })
 		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-		keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Marks list" })
+		keymap.set("n", "<leader>f'", "<cmd>Telescope marks<cr>", { desc = "Marks list" })
+		keymap.set("n", '<leader>f"', "<cmd>Telescope registers<cr>", { desc = "register list" })
 		keymap.set("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "notify list" })
 	end,
 }
