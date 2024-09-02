@@ -27,7 +27,7 @@ exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
-exec_always --no-startup-id xset s 3600 0
+exec_always --no-startup-id xset s 1800 0
 exec_always --no-startup-id xset dpms 1800 3600 0
 exec_always --no-startup-id fcitx5
 # background picture
