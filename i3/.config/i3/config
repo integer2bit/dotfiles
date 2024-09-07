@@ -59,9 +59,9 @@ bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 5
 
 # Win kyemap
 bindsym Mod4+e exec env GDK_SCALE=2 nautilus
-bindsym Mod4+l exec i3lock-fancy -f JetBrains-Mono-Regular
+bindsym Mod4+l exec xset dpms force off & i3lock-fancy -f JetBrains-Mono-Regular
 bindsym Mod4+s exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl suspend 
-bindsym Mod4+h exec systemctl hibernate
+bindsym Mod4+h exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl hibernate
 
 # screenshot tools
 bindsym Print exec spectacle -r
