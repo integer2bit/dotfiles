@@ -107,10 +107,8 @@ alias vi='nvim'
 alias ls='ls --color'
 alias la='ls -a'
 alias cl='clear'
-alias cdob='cd $HOME/Documents/obsidian/'
 alias rcmount='rclone mount onedrive:/ ~/Cloud/onedrive/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode full --daemon'
 alias winmount='sudo ntfs-3g /dev/nvme0n1p3 /home/world/win'
-alias v2ray='sudo v2raya'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 
