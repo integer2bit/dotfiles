@@ -10,12 +10,17 @@ include current-theme.conf
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
-#: characters.
-
-font_family      JetBrainsMono Nerd Font Mono
+# BEGIN_KITTY_FONTS
+font_family      family="JetBrains Mono"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
+# END_KITTY_FONTS
+#: characters.
+# font_family      JetBrainsMono Nerd Font Mono
+# bold_font        auto
+# italic_font      auto
+# bold_italic_font auto
 font_size 11.5
 
 #: You can specify different fonts for the bold/italic/bold-italic
@@ -2517,3 +2522,4 @@ term xterm-256color
 #: }}}
 
 #: }}}
+
