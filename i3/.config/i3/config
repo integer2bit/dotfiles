@@ -22,13 +22,13 @@ font pango:JetBrainsMono Nerd Font Mono 12
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/.config/i3/Yanami.jpg
-# map capslock to ctrl
+# map capslock to ctrl, use keyd https://github.com/rvaiya/keyd
+# exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 # exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 exec --no-startup-id xset s 1800
 exec --no-startup-id xset dpms 0 0 1800
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always --no-startup-id fcitx5
 # background picture
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -60,8 +60,8 @@ bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 5
 # Win kyemap
 bindsym Mod4+e exec env GDK_SCALE=2 nautilus
 bindsym Mod4+l exec xset dpms force off & i3lock-fancy -f JetBrains-Mono-Regular & xset dpms force off 
-bindsym Mod4+s exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl suspend 
-bindsym Mod4+h exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl hibernate
+# bindsym Mod4+s exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl suspend 
+# bindsym Mod4+h exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl hibernate
 
 # screenshot tools
 bindsym Print exec spectacle -r
