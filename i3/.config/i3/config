@@ -73,6 +73,8 @@ bindsym Mod4+period exec --no-startup-id rofi -modi emoji -show emoji -dpi 192
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+# default float for mpv media player
+for_window [class="mpv"] floating enable
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
