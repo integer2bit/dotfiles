@@ -30,6 +30,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xset s 1800
 exec --no-startup-id xset dpms 0 0 1800
 exec_always --no-startup-id fcitx5
+exec_always --no-startup-id copyq --start-server && copyq hide
 # background picture
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -65,6 +66,7 @@ bindsym Mod4+l exec xset dpms force off & i3lock-fancy -f JetBrains-Mono-Regular
 
 # screenshot tools
 bindsym Print exec spectacle -r
+bindsym Mod4+Shift+s exec spectacle -r
 # rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun -dpi 192
 bindsym $mod+space exec --no-startup-id rofi -show combi -dpi 192
