@@ -46,6 +46,23 @@ return {
 					opts = { buffer = true },
 				},
 			},
+			-- Optional, customize how note IDs are generated given an optional title.
+			---@param title string|?
+			---@return string
+			note_id_func = function(title)
+				-- Create note IDs in a Zettelkasten format with a timestamp (YYYY-MM-DD-HH-MM-SS) and a suffix.
+				-- For example, a note with the title 'My new note' will be given an ID like '2024-12-29-14-30-45-my-new-note'.
+				local suffix = ""
+				if title ~= nil then
+					-- If title is given, transform it into a valid file name.
+					suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+				end
+
+				-- Get the current timestamp in the desired format.
+				local timestamp = os.date("%Y-%m-%d-%H-%M-%S")
+
+				return timestamp .. (suffix ~= "" and "-" .. suffix or "")
+			end,
 			-- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
 			completion = {
 				-- Set to false to disable completion.
