@@ -7,6 +7,7 @@
 - zsh
 - mpv
 - i3(with i3status)
+- zathura(pdf viewer, with zathura-pdf-mupdf)
 
 ## Installation 
 

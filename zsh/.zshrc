@@ -36,7 +36,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 if [ "$(id -u)" -eq 0 ]; then
   PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 else
-  PATH="/usr/local/bin:/usr/bin:/bin"
+  PATH="/usr/local/bin:/usr/bin:/bin:$HOME/go/bin"
 fi
 export PATH
 
@@ -109,7 +109,6 @@ alias la='ls -a'
 alias cl='clear'
 alias cdob='cd $HOME/Documents/obsidian/'
 alias rcmount='rclone mount onedrive:/ ~/Cloud/onedrive/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode full --daemon'
-alias winmount='sudo ntfs-3g /dev/nvme0n1p3 /home/world/win'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias xo='xrandr --output eDP --off --output HDMI-A-0 --mode 1920x1080'
 alias xon='xrandr --output eDP --auto'

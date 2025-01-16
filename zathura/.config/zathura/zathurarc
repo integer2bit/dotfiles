@@ -1,0 +1,17 @@
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+#zoom settings
+set guioptions ""
+
+# font size
+set font "Monospace 12"
+
+# clipboard configurations
+set selection-clipboard clipboard
+
+# mappings
+
+# unmap f
+# map f toggle_fullscreen
+# map [fullscreen] f toggle_fullscreen
