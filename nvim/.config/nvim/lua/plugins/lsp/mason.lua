@@ -34,7 +34,7 @@ return {
 				"tailwindcss",
 				"lua_ls",
 				"clangd",
-				"cmake",
+				-- "cmake",
 				"marksman",
 				"bashls",
 				--        "emmet_ls",
