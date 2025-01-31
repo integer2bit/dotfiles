@@ -1,7 +1,17 @@
 return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
-	dependencies = { "saghen/blink.cmp" },
+	dependencies = {
+		"saghen/blink.cmp",
+		{
+			"folke/lazydev.nvim",
+			opts = {
+				library = {
+					{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+				},
+			},
+		},
+	},
 	opts = {
 		servers = {
 			lua_ls = {},
@@ -9,6 +19,15 @@ return {
 		},
 	},
 	config = function(_, opts)
+		-- import lspconfig plugin
+		local lspconfig = require("lspconfig")
+		for server, config in pairs(opts.servers) do
+			-- passing config.capabilities to blink.cmp merges with the capabilities in your
+			-- `opts[server].capabilities, if you've defined it
+			config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+			config.on_attach = on_attach
+			lspconfig[server].setup(config)
+		end
 		local on_attach = function(_, bufnr)
 			opts.buffer = bufnr
 			-- set keybinds
@@ -81,15 +100,6 @@ return {
 		end
 		-- default diagnostic settings
 		vim.diagnostic.enable(false)
-		-- import lspconfig plugin
-		local lspconfig = require("lspconfig")
-		for server, config in pairs(opts.servers) do
-			-- passing config.capabilities to blink.cmp merges with the capabilities in your
-			-- `opts[server].capabilities, if you've defined it
-			config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-			config.on_attach = on_attach
-			lspconfig[server].setup(config)
-		end
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }

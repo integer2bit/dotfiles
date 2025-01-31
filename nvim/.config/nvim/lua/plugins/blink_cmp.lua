@@ -15,8 +15,6 @@ return {
 		-- See the full "keymap" documentation for information on defining your own keymap.
 		keymap = {
 			preset = "default",
-			["<Tab>"] = { "snippet_forward", "fallback" },
-			["<S-Tab>"] = { "snippet_backward", "fallback" },
 			["<Up>"] = { "select_prev", "fallback" },
 			["<Down>"] = { "select_next", "fallback" },
 			["<C-k>"] = { "select_prev", "fallback" },
@@ -26,12 +24,27 @@ return {
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide", "fallback" },
 		},
+		-- Displays a preview of the selected item on the current line
+		completion = {},
+		signature = {
+			enabled = true,
+		},
 		appearance = {
-			-- Sets the fallback highlight groups to nvim-cmp's highlight groups
-			-- Useful for when your theme doesn't support blink.cmp
-			-- Will be removed in a future release
 			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
+		},
+		snippets = {
+			expand = function(snippet)
+				require("luasnip").lsp_expand(snippet)
+			end,
+			active = function(filter)
+				if filter and filter.direction then
+					return require("luasnip").jumpable(filter.direction)
+				end
+			end,
+			jump = function(direction)
+				require("luasnip").jump(direction)
+			end,
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
