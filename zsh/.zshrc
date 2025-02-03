@@ -104,6 +104,7 @@ zstyle ':completion:*' menu no
 
 ### custome alias 
 alias vi='nvim'
+alias vifzf='nvim $(fzf --preview="cat {}")'
 alias ls='ls --color'
 alias la='ls -a'
 alias cl='clear'

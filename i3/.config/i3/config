@@ -63,7 +63,7 @@ bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 5
 # Win kyemap
 bindsym Mod4+e exec nautilus
 bindsym Mod4+l exec xset dpms force off & i3lock-fancy -f JetBrains-Mono-Regular & xset dpms force off 
-# bindsym Mod4+s exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl suspend 
+bindsym Mod4+s exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl suspend 
 # bindsym Mod4+h exec i3lock-fancy -f JetBrains-Mono-Regular & systemctl hibernate
 
 # screenshot tools
@@ -79,7 +79,7 @@ bindsym Mod4+period exec --no-startup-id rofi -modi emoji -show emoji -dpi 96
 floating_modifier $mod
 # default float for mpv media player
 for_window [class="mpv"] floating enable
-
+for_window [class="Anki"] floating enable
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
