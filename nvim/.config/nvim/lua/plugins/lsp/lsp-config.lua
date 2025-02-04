@@ -16,6 +16,7 @@ return {
 		servers = {
 			lua_ls = {},
 			bashls = {},
+			pyright = {},
 		},
 	},
 	config = function(_, opts)

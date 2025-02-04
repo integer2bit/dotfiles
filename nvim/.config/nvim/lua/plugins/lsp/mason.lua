@@ -30,6 +30,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"bashls",
+				"pyright",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -39,7 +40,9 @@ return {
 			ensure_installed = {
 				--				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
-				"shfmt",
+				"shfmt", -- bash shell formatter
+				"isort",
+				"black", -- python formatter
 			},
 		})
 	end,

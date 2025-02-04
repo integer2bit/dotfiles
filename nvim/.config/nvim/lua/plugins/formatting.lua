@@ -18,9 +18,7 @@ return {
 				cmake = { "cmakelang" },
 				bash = { "shfmt" },
 				-- markdown = { "prettier" },
-				-- svelte = { "prettier" },
-				-- graphql = { "prettier" },
-				-- python = { "isort", "black" },
+				python = { "isort", "black" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
