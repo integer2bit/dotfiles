@@ -70,11 +70,12 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - tree-sitter-cli (for latex parser)
 
 ## i3
-### dependencies
+### dependencies and tools
 
 - picom(compositor)
 - feh(wallpaper)
 - xorg(xorg-xrandr and xorg config)
+- pavucontrol(audio control)
 - rofi (app launcher)
 - rofi-emoji (xdotool, xclip needed)
 - i3lock-fancy(better lock style)
