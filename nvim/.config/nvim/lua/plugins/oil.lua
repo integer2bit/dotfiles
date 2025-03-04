@@ -5,16 +5,16 @@ return {
 	dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
 	config = function()
-		-- auto enable preview
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "OilEnter",
-			callback = vim.schedule_wrap(function(args)
-				local oil = require("oil")
-				if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
-					oil.open_preview()
-				end
-			end),
-		})
+		-- -- auto enable preview
+		-- vim.api.nvim_create_autocmd("User", {
+		-- 	pattern = "OilEnter",
+		-- 	callback = vim.schedule_wrap(function(args)
+		-- 		local oil = require("oil")
+		-- 		if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
+		-- 			oil.open_preview()
+		-- 		end
+		-- 	end),
+		-- })
 		require("oil").setup({
 			-- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
 			-- Set to false if you still want to use netrw.

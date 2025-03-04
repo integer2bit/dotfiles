@@ -29,10 +29,13 @@ exec_always --no-startup-id feh --bg-scale ~/.config/i3/Yanami.jpg
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
-exec --no-startup-id xset s 1800
-exec --no-startup-id xset dpms 0 0 1800
+exec --no-startup-id xset s 3600
+exec --no-startup-id xset dpms 0 0 3600
+exec --no-startup-id xrandr --output eDP --off --output HDMI-A-0 --mode 1920x1080
 exec_always --no-startup-id fcitx5
 exec_always --no-startup-id copyq --start-server && copyq hide
+# disable mouse acceleration
+# exec_always for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
 # background picture
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
