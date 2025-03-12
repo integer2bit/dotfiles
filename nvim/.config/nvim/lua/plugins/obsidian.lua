@@ -14,6 +14,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
+		"saghen/blink.cmp",
 	},
 	config = function()
 		require("obsidian").setup({
@@ -66,7 +67,8 @@ return {
 			-- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
 			completion = {
 				-- Set to false to disable completion.
-				nvim_cmp = true,
+				nvim_cmp = false,
+				blink = true,
 				-- Trigger completion at 2 chars.
 				min_chars = 2,
 			},
