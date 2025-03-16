@@ -112,7 +112,6 @@ alias cl='clear'
 alias cdob='cd $HOME/Documents/obsidian/'
 alias rcmount='rclone mount onedrive:/ ~/Cloud/onedrive/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode writes --daemon'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias xo='xrandr --output eDP --off --output HDMI-A-0 --mode 1920x1080'
 alias xon='xrandr --output eDP --auto'
 
 

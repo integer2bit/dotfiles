@@ -81,7 +81,6 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - i3lock-fancy(better lock style)
 - acpilight (xbacklight excutable provided)
 - spectacle (screenshot)
-- copyq (clipboard)
 - kitty (terminal)
 - network-manager-applet (wireless tray)
 - fcitx5 (input method)

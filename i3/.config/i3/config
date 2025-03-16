@@ -21,17 +21,17 @@ font pango:JetBrainsMono Nerd Font Mono 12
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id picom
-exec --no-startup-id xo
 # change display screen resolution
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/Yanami.jpg
 # map capslock to ctrl, use keyd https://github.com/rvaiya/keyd
 # exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+# BOSE QC45 AC:BF:71:E3:AB:54
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 exec --no-startup-id xset s 3600
 exec --no-startup-id xset dpms 0 0 3600
-exec --no-startup-id xrandr --output eDP --off --output HDMI-A-0 --mode 1920x1080
+exec_always --no-startup-id xrandr --output eDP --off --output HDMI-1 --mode 1920x1080
 exec_always --no-startup-id fcitx5
 exec_always --no-startup-id copyq --start-server && copyq hide
 # disable mouse acceleration
