@@ -56,14 +56,14 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - [fd](https://github.com/sharkdp/fd)
 - [fzf](https://github.com/junegunn/fzf)
 - git
-- curl or wget
+- wget
 - unzip
 - gzip
 - nodejs
 - npm
 - python3
 - python-pip
-- gcc
+- clang
 - make
 - cmake
 - texlive (for vimtex)
@@ -74,17 +74,14 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 
 - picom(compositor)
 - feh(wallpaper)
-- xorg(xorg-xrandr and xorg config)
 - pavucontrol(audio control)
 - rofi (app launcher)
 - rofi-emoji (xdotool, xclip needed)
-- i3lock-fancy(better lock style)
 - acpilight (xbacklight excutable provided)
 - spectacle (screenshot)
 - kitty (terminal)
-- network-manager-applet (wireless tray)
-- fcitx5 (input method)
 - nautilus (gnome file manager)
+- i3lock-fancy(aur, better lock style)
 
 ## mpv
 

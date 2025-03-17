@@ -42,7 +42,7 @@ opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldenable = false
 -- shada file
-opt.shada = { "'50", "<100", "s100", "h" }
+opt.shada = "'100,<1000,s100,h"
 
 -- clipboard settings
 opt.clipboard = "unnamedplus"
