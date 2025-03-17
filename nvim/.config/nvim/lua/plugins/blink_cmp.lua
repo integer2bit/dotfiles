@@ -2,6 +2,8 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
+		"epwalsh/obsidian.nvim",
+		{ "saghen/blink.compat", lazy = true, version = false },
 		{ "L3MON4D3/LuaSnip", version = "v2.*" },
 	},
 	version = "*",
@@ -47,7 +49,20 @@ return {
 			end,
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = {
+				"lsp",
+				"path",
+				"snippets",
+				"buffer",
+				"obsidian",
+				"obsidian_new",
+				"obsidian_tags",
+			},
+			providers = {
+				obsidian = { name = "obsidian", module = "blink.compat.source" },
+				obsidian_new = { name = "obsidian_new", module = "blink.compat.source" },
+				obsidian_tags = { name = "obsidian_tags", module = "blink.compat.source" },
+			},
 		},
 	},
 	opts_extend = { "sources.default" },
