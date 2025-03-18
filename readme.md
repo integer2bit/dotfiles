@@ -65,7 +65,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - acpilight (xbacklight excutable provided)
 - spectacle (screenshot)
 - kitty (terminal)
-- nautilus (gnome file manager)
+- dolphin (kde file manager)
 - i3lock-fancy(aur, better lock style)
 
 ## mpv
