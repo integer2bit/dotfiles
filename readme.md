@@ -63,9 +63,9 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - rofi (app launcher)
 - rofi-emoji (xdotool, xclip needed)
 - acpilight (xbacklight excutable provided)
-- spectacle (screenshot)
+- maim (screenshot)
 - kitty (terminal)
-- dolphin (kde file manager)
+- thunar (xfce4 file manager), gvfs (trashbin support)
 - i3lock-fancy(aur, better lock style)
 
 ## mpv
