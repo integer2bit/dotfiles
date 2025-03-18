@@ -57,15 +57,16 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 ## i3
 ### dependencies and tools
 
+- kitty (terminal)
 - picom(compositor)
-- feh(wallpaper)
-- pavucontrol(audio control)
 - rofi (app launcher)
 - rofi-emoji (xdotool, xclip needed)
-- acpilight (xbacklight excutable provided)
-- maim (screenshot)
-- kitty (terminal)
+- feh(wallpaper)
 - thunar (xfce4 file manager), gvfs (trashbin support)
+- maim (screenshot)
+- copyq (multi-media clipboard)
+- pavucontrol(audio control)
+- acpilight (xbacklight excutable provided)
 - i3lock-fancy(aur, better lock style)
 
 ## mpv
