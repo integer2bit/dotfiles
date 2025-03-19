@@ -37,6 +37,14 @@ opt.undodir = vim.fn.expand("$HOME/.undo//")
 opt.list = true
 opt.listchars = { leadmultispace = "│ ", multispace = "│ ", tab = "│ " }
 
+-- auto create file folders
+vim.api.nvim_create_autocmd("BufNewFile", {
+	pattern = "*",
+	callback = function()
+		vim.fn.mkdir(vim.fn.expand("%:h"), "p")
+	end,
+})
+
 -- set folding
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
