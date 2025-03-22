@@ -2,7 +2,6 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		"epwalsh/obsidian.nvim",
 		{ "saghen/blink.compat", lazy = true, version = false },
 		{ "L3MON4D3/LuaSnip", version = "v2.*" },
 	},
