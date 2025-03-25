@@ -1,5 +1,6 @@
 return {
 	"folke/trouble.nvim",
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	keys = {
 		{
