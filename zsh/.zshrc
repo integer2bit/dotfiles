@@ -114,7 +114,7 @@ zstyle ':completion:*' menu no
 ### custome alias 
 alias vi='nvim'
 alias vifzf='nvim $(fzf --preview="cat {}")'
-alias ls='ls --color'
+alias ls='ls -F --color=none'
 alias la='ls -a'
 alias cl='clear'
 alias cdob='cd $HOME/Documents/obsidian/'
