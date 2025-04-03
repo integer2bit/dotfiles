@@ -101,15 +101,18 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light jeffreytse/zsh-vi-mode
 
-
 # Completion styling
 fpath=(~/.local/share/zinit/completions/src $fpath)
 autoload -Uz compinit && compinit
-bindkey '^o' autosuggest-accept
-
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+
+# zsh-vi-mode
+function keymap() {
+  bindkey '^y' autosuggest-accept
+}
+zvm_after_init_commands+=(keymap)
 
 ### custome alias 
 alias vi='nvim'
