@@ -109,6 +109,9 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 
 # zsh-vi-mode
+function zvm_after_init() {
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+}
 function keymap() {
   bindkey '^y' autosuggest-accept
 }
