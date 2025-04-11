@@ -32,7 +32,9 @@ return {
 			[[⠿⠛⠛⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣯⣟⠷⢷⣿⡿⠋⠀⠀⠀⠀⣵⡀⢠⡿⠋⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
 			[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⢿⣿⣿⠂⠀⠀⠀⠀⠀⢀⣽⣿⣿⣿⣿⣿⣿⣿⣍⠛⠿⣿⣿⣿⣿⣿⣿]],
 		}
-		dashboard.section.header.opts.hl = "none"
+		local blue = "#61AFEF"
+		vim.api.nvim_set_hl(0, "dashboard_blue", { fg = blue })
+		dashboard.section.header.opts.hl = "dashboard_blue"
 		dashboard.section.buttons.val = {
 			dashboard.button("n", "  > New file", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("f", "󰈞  > Find file", ":Telescope find_files hidden=true<CR>"),
