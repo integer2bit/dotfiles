@@ -17,8 +17,8 @@ opt.relativenumber = true
 -- jumpoptions
 opt.jumpoptions = "stack,view"
 -- set vim spell check
-opt.spelllang = "en_us,cjk"
-opt.spell = true
+-- opt.spelllang = "en_us,cjk"
+-- opt.spell = true
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive

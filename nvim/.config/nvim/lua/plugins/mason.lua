@@ -43,6 +43,7 @@ return {
 				"shfmt", -- bash shell formatter
 				"isort",
 				"black", -- python formatter
+				"jsonlint",
 			},
 		})
 	end,

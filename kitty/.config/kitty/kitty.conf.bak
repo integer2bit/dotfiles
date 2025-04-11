@@ -5,13 +5,12 @@ include current-theme.conf
 # END_KITTY_THEME
 
 # vim:fileencoding=utf-8:foldmethod=marker
-
 #: Fonts {{{
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 # BEGIN_KITTY_FONTS
-font_family      family="JetBrains Mono"
+font_family      family="JetBrainsMono Nerd Font Mono"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
@@ -21,7 +20,8 @@ bold_italic_font auto
 # bold_font        auto
 # italic_font      auto
 # bold_italic_font auto
-font_size 11.5
+# font_size 11.5
+font_size 12
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -1812,7 +1812,6 @@ term xterm-256color
 #: details on advanced mapping including modal and per application
 #: maps, see mapping <https://sw.kovidgoyal.net/kitty/mapping/>. Some
 #: quick examples to illustrate common tasks::
-
 #:     # unmap a keyboard shortcut, passing it to the program running in kitty
 #:     map kitty_mod+space
 #:     # completely ignore a keyboard event
