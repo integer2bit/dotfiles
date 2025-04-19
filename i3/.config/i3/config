@@ -21,7 +21,8 @@ font pango:JetBrainsMono Nerd Font Mono 12
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id picom
-# change display screen resolution
+# change monitor and wallpaper
+exec_always --no-startup-id bash ~/.config/i3/switch_to_hdmi.sh
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/Yanami.jpg
 # map capslock to ctrl, use keyd https://github.com/rvaiya/keyd
 # exec_always --no-startup-id setxkbmap -option ctrl:nocaps
@@ -30,7 +31,6 @@ exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id copyq --start-server && copyq hide
 exec --no-startup-id xset s 3600
 exec --no-startup-id xset dpms 0 0 3600
-exec_always --no-startup-id bash ~/.config/i3/switch_to_hdmi.sh
 exec_always --no-startup-id fcitx5
 # disable mouse acceleration
 # exec_always for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
