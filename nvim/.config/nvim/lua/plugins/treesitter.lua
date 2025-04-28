@@ -29,15 +29,15 @@ return {
 				autotag = {
 					enable = true,
 				},
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						init_selection = "<leader>nn",
-						node_incremental = "<leader>nn",
-						scope_incremental = "<leader>rc",
-						node_decremental = "<leader>rm",
-					},
-				},
+				-- incremental_selection = {
+				-- 	enable = true,
+				-- 	keymaps = {
+				-- 		init_selection = "<leader>nn",
+				-- 		node_incremental = "<leader>nn",
+				-- 		scope_incremental = "<leader>rc",
+				-- 		node_decremental = "<leader>rm",
+				-- 	},
+				-- },
 			})
 		end,
 	},
