@@ -48,7 +48,24 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 -- set folding
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldenable = false
+
+-- Prefer LSP folding if client supports it
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if client:supports_method("textDocument/foldingRange") then
+			local win = vim.api.nvim_get_current_win()
+			vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+		end
+	end,
+})
+
+-- fold column and fillchars option
+opt.foldenable = true
+opt.foldcolumn = "1"
+opt.foldlevelstart = 99
+opt.fillchars = "fold: ,foldopen:,foldsep: ,foldclose:"
+
 -- shada file
 opt.shada = "'100,<1000,s100,h"
 
