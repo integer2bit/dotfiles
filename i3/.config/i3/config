@@ -65,10 +65,10 @@ bindsym Print exec --no-startup-id maim --select | tee "$HOME/Pictures/screensho
 bindsym Mod4+Shift+s exec --no-startup-id maim | tee "$HOME/Pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png" | xclip -selection clipboard -t image/png 
 
 # rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -dpi 96
-bindsym $mod+space exec --no-startup-id rofi -show combi -dpi 96
-bindsym $mod+Tab exec --no-startup-id rofi -show window -dpi 96
-bindsym Mod4+period exec --no-startup-id rofi -modi emoji -show emoji -dpi 96
+bindsym $mod+d exec --no-startup-id rofi -show drun -dpi 1
+bindsym $mod+space exec --no-startup-id rofi -show combi -dpi 1
+bindsym $mod+Tab exec --no-startup-id rofi -show window -dpi 1
+bindsym Mod4+period exec --no-startup-id rofi -modi emoji -show emoji -dpi 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
