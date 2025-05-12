@@ -35,7 +35,7 @@ return {
 				action = function()
 					return require("obsidian").util.toggle_checkbox()
 				end,
-				opts = { buffer = true },
+				opts = { buffer = true, desc = "toggle check-boxes" },
 			},
 			-- Smart action depending on context, either follow link or toggle checkbox.
 			["<cr>"] = {
@@ -45,6 +45,10 @@ return {
 				opts = { buffer = true },
 			},
 		},
+		-- Optional, customize how wiki link are generated
+		wiki_link_func = function(opts)
+			return require("obsidian.util").wiki_link_path_only(opts)
+		end,
 		-- Optional, customize how note IDs are generated given an optional title.
 		---@param title string|?
 		---@return string
