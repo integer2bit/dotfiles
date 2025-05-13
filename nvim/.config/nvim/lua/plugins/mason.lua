@@ -38,6 +38,7 @@ return {
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
+			automatic_enable = true,
 		})
 
 		mason_tool_installer.setup({

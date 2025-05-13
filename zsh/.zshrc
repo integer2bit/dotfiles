@@ -141,6 +141,7 @@ bindkey '^g' cd_to_dir
 
 ### custome alias 
 alias vi='nvim'
+alias vit='NVIM_APPNAME=nvimtest nvim'
 alias vifzf='nvim $(fzf --preview="cat {}")'
 alias ls='ls -F --color=none'
 alias la='ls -a'

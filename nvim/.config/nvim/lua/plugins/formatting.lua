@@ -2,32 +2,7 @@ return {
 	"stevearc/conform.nvim",
 	lazy = true,
 	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
-	config = function()
-		local conform = require("conform")
-		conform.setup({
-			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				css = { "prettier" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				lua = { "stylua" },
-				-- cmake = { "cmakelang" },
-				bash = { "shfmt" },
-				-- markdown = { "prettier" },
-				python = { "isort", "black" },
-			},
-			format_on_save = function(bufnr)
-				-- Disable with a global or buffer-local variable
-				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-					return
-				end
-				return { timeout_ms = 500, lsp_format = "fallback" }
-			end,
-		})
+	opts = function(_, opts)
 		-- range formatting question https://github.com/stevearc/conform.nvim/blob/master/doc/advanced_topics.md#range-formatting
 		vim.keymap.set({ "n", "v" }, "<leader>cf", function()
 			require("conform").format({ async = true }, function(err)
@@ -56,5 +31,29 @@ return {
 		end, {
 			desc = "Re-enable autoformat-on-save",
 		})
+		return {
+			formatters_by_ft = {
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
+				css = { "prettier" },
+				html = { "prettier" },
+				json = { "prettier" },
+				yaml = { "prettier" },
+				lua = { "stylua" },
+				-- cmake = { "cmakelang" },
+				bash = { "shfmt" },
+				-- markdown = { "prettier" },
+				python = { "isort", "black" },
+			},
+			format_on_save = function(bufnr)
+				-- Disable with a global or buffer-local variable
+				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+					return
+				end
+				return { timeout_ms = 500, lsp_format = "fallback" }
+			end,
+		}
 	end,
 }
