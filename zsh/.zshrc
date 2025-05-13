@@ -125,6 +125,20 @@ function keymap() {
 }
 zvm_after_init_commands+=(keymap)
 
+# fzf change directory faster
+cd_to_dir() {
+    local selected_dir
+    selected_dir=$(fd -t d . . | fzf +m --height 50% --preview 'tree -C -L 2 {}' --bind 'ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down' )
+    if [[ -n "$selected_dir" ]]; then
+        # Change to the selected directory
+        cd "$selected_dir" || return 1
+    fi
+}
+
+alias cdd='cd_to_dir'
+zle -N cd_to_dir
+bindkey '^g' cd_to_dir
+
 ### custome alias 
 alias vi='nvim'
 alias vifzf='nvim $(fzf --preview="cat {}")'
