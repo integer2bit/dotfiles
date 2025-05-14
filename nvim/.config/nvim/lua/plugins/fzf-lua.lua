@@ -6,12 +6,14 @@ return {
 		local actions = require("fzf-lua").actions
 		return {
 			keymap = {
-				["<c-down>"] = "preview-page-down",
-				["<c-up>"] = "preview-page-up",
-			},
-			fzf = {
-				["ctrl-f"] = "half-page-down",
-				["ctrl-b"] = "half-page-up",
+				builtin = {
+					["<c-d>"] = "preview-page-down",
+					["<c-u>"] = "preview-page-up",
+				},
+				fzf = {
+					["ctrl-f"] = "half-page-down",
+					["ctrl-b"] = "half-page-up",
+				},
 			},
 			actions = {
 				files = {
