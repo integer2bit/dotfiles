@@ -2,6 +2,7 @@ return {
 	"stevearc/oil.nvim",
 	dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
+	-- Optional dependencies
 	opts = {
 		-- -- auto enable preview
 		-- vim.api.nvim_create_autocmd("User", {
@@ -13,9 +14,6 @@ return {
 		-- 		end
 		-- 	end),
 		-- }),
-	},
-	-- Optional dependencies
-	opts = {
 		-- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
 		-- Set to false if you still want to use netrw.
 		default_file_explorer = true,
