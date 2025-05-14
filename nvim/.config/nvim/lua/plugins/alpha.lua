@@ -36,11 +36,11 @@ return {
 		vim.api.nvim_set_hl(0, "dashboard_blue", { fg = blue })
 		dashboard.section.header.opts.hl = "dashboard_blue"
 		dashboard.section.buttons.val = {
-			dashboard.button("n", "  > New file", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("f", "󰈞  > Find file", ":Telescope find_files hidden=true<CR>"),
-			dashboard.button("r", "  > Recent file", ":Telescope oldfiles only_cwd=true<CR>"),
-			dashboard.button("e", "  > File exolrer", ":Oil<CR>"),
-			dashboard.button("q", "󰗼  > Quit NVIM", ":qa<CR>"),
+			dashboard.button("n", "  > New file", "<cmd>ene <BAR> startinsert <CR>"),
+			dashboard.button("f", "󰈞  > Find file", "<cmd>FzfLua files hidden=false<cr>"),
+			dashboard.button("r", "  > Recent file", "<cmd>FzfLua oldfiles<cr>"),
+			dashboard.button("e", "  > File exolrer", "<cmd>Oil<cr>"),
+			dashboard.button("q", "󰗼  > Quit NVIM", "<cmd>qa<CR>"),
 		}
 		return dashboard
 	end,
