@@ -4,6 +4,7 @@ return {
 	event = { "BufWinEnter" },
 	opts = function(_, opts)
 		local actions = require("fzf-lua").actions
+		vim.cmd("FzfLua register_ui_select")
 		return {
 			keymap = {
 				builtin = {
