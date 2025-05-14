@@ -25,6 +25,10 @@ return {
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide", "fallback" },
 		},
+		cmdline = {
+			keymap = { preset = "inherit" },
+			completion = { menu = { auto_show = true } },
+		},
 		-- Displays a preview of the selected item on the current line
 		completion = {},
 		signature = {
