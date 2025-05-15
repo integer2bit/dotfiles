@@ -1,22 +1,8 @@
 return {
-	"williamboman/mason.nvim",
-	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-	},
-	-- event = { "BufRead" },
-	cmd = "Mason",
-	config = function()
-		-- import mason
-		local mason = require("mason")
-
-		-- import mason-lspconfig
-		local mason_lspconfig = require("mason-lspconfig")
-
-		local mason_tool_installer = require("mason-tool-installer")
-
-		-- enable mason and configure icons
-		mason.setup({
+	{
+		"williamboman/mason.nvim",
+		cmd = { "Mason", "MasonToolsInstall", "MasonToolsUpdate" },
+		opts = {
 			ui = {
 				icons = {
 					package_installed = "✓",
@@ -24,30 +10,26 @@ return {
 					package_uninstalled = "✗",
 				},
 			},
-		})
-
-		mason_lspconfig.setup({
-			-- list of servers for mason to install
+		},
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
+		opts = {
 			ensure_installed = {
-				"lua_ls",
-				"bashls",
+				-- language server
+				"lua-language-server",
+				"bash-language-server",
 				"ruff",
-				"html",
-				"ts_ls",
-				"cssls",
-			},
-			-- auto-install configured servers (with lspconfig)
-			automatic_installation = true, -- not the same as ensure_installed
-			automatic_enable = true,
-		})
-
-		mason_tool_installer.setup({
-			ensure_installed = {
+				"html-lsp",
+				"typescript-language-server",
+				"css-lsp",
+				-- formatter and linter
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"shfmt", -- bash shell formatter
-				"jsonlint",
+				"jsonlint", --json linter
 			},
-		})
-	end,
+		},
+	},
 }
