@@ -45,7 +45,7 @@ return {
 				-- cmake = { "cmakelang" },
 				bash = { "shfmt" },
 				-- markdown = { "prettier" },
-				python = { "isort", "black" },
+				python = { "ruff" },
 			},
 			format_on_save = function(bufnr)
 				-- Disable with a global or buffer-local variable

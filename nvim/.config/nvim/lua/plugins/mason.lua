@@ -31,7 +31,7 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"bashls",
-				"pyright",
+				"ruff",
 				"html",
 				"ts_ls",
 				"cssls",
@@ -46,8 +46,6 @@ return {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"shfmt", -- bash shell formatter
-				"isort",
-				"black", -- python formatter
 				"jsonlint",
 			},
 		})
