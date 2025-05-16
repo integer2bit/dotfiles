@@ -62,9 +62,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- fold column and fillchars option
 opt.foldenable = true
-opt.foldcolumn = "1"
 opt.foldlevelstart = 99
-opt.fillchars = "fold: ,foldopen:,foldsep: ,foldclose:"
+-- opt.foldcolumn = "1"
+-- opt.fillchars = "fold: ,foldopen:,foldsep: ,foldclose:"
 
 -- shada file
 opt.shada = "'100,<1000,s100,h"
