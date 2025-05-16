@@ -62,7 +62,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - rofi (app launcher)
 - rofi-emoji (xdotool, xclip needed)
 - feh(wallpaper)
-- thunar (xfce4 file manager), gvfs (trashbin support)
+- thunar (xfce4 file manager), gvfs gvfs-dnssd (trashbin and webdav support) 
 - maim (screenshot)
 - copyq (multi-media clipboard)
 - pavucontrol(audio control)

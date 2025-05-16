@@ -10,9 +10,10 @@ return {
 		opts = {
 			ensure_installed = { "regex", "markdown", "markdown_inline", "vim" },
 			auto_install = true,
+			ignore_install = { "org" },
 			highlight = {
 				enable = true,
-				disable = { "latex" },
+				-- disable = { "latex" },
 				disable = function(lang, buf)
 					local max_filesize = 100 * 1024 -- 100 KB
 					local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
