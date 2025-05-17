@@ -38,7 +38,7 @@ return {
 		dashboard.section.buttons.val = {
 			dashboard.button("n", "  > New file", "<cmd>ene <BAR> startinsert <CR>"),
 			dashboard.button("f", "󰈞  > Find file", "<cmd>FzfLua files hidden=false<cr>"),
-			dashboard.button("r", "  > Recent file", "<cmd>FzfLua oldfiles<cr>"),
+			dashboard.button("o", "  > Recent file", "<cmd>FzfLua oldfiles<cr>"),
 			dashboard.button("e", "  > File exolrer", "<cmd>Oil<cr>"),
 			dashboard.button("q", "󰗼  > Quit NVIM", "<cmd>qa<CR>"),
 		}

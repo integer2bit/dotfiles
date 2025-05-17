@@ -112,7 +112,7 @@ return {
 				tags = note.tags,
 				-- ["links"] = "",
 				-- ["backlins"] = "",
-				-- ["Date"] = os.date("%Y-%m-%d %H:%M:%S"),
+				["Date"] = os.date("%Y-%m-%d %H:%M:%S"),
 				["Last modified"] = os.date("%Y-%m-%d %H:%M:%S"),
 			}
 
@@ -123,7 +123,6 @@ return {
 					out[k] = v
 				end
 			end
-
 			return out
 		end,
 		ui = {
