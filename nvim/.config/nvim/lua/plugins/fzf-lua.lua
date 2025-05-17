@@ -6,6 +6,12 @@ return {
 		local actions = require("fzf-lua").actions
 		vim.cmd("FzfLua register_ui_select")
 		return {
+			winopts = {
+				fullscreen = true,
+				preview = {
+					wrap = true,
+				},
+			},
 			keymap = {
 				builtin = {
 					["<c-d>"] = "preview-page-down",
@@ -45,7 +51,7 @@ return {
 		{ "<leader>fc", "<cmd>FzfLua grep_cword<cr>", desc = "Find string under Cursor in cwd" },
 		{ '<leader>f"', "<cmd>FzfLua registers<cr>", desc = "register list" },
 		{ "<leader>f'", "<cmd>FzfLua marks<cr>", desc = "mark list" },
-		{ "<leader>fn", "<cmd>NoicePick<cr>", desc = "notify list" },
+		{ "<leader>fn", "<cmd>NoiceFzf<cr>", desc = "notify list" },
 		-- lsp
 		{ "<leader>gr", "<cmd>FzfLua lsp_references<CR>", desc = "Show LSP references" },
 		{ "<leader>gd", "<cmd>FzfLua lsp_definitions<CR>", desc = "Show LSP definitions" },
