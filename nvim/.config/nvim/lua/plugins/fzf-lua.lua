@@ -14,6 +14,8 @@ return {
 			},
 			keymap = {
 				builtin = {
+					["<F1>"] = "toggle-help",
+					["<F2>"] = "toggle-fullscreen",
 					["<c-d>"] = "preview-page-down",
 					["<c-u>"] = "preview-page-up",
 				},
@@ -39,10 +41,17 @@ return {
 				stat_file = true, -- verify files exist on disk
 				include_current_session = false, -- include bufs from current session
 			},
+			buffers = {
+				prompt = "Buffers❯ ",
+				-- winopts = {
+				-- 	fullscreen = false,
+				-- 	preview = { hidden = true },
+				-- },
+			},
 		}
 	end,
 	keys = {
-		{ "<leader>ff", "<cmd>FzfLua files hidden=false<cr>", desc = "Fuzzy Find files" },
+		{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Fuzzy Find files" },
 		{ "<leader>fo", "<cmd>FzfLua oldfiles<cr>", desc = "Fuzzy find Oldfiles files" },
 		{ "<leader>fr", "<cmd>FzfLua resume<cr>", desc = "Fuzzy Resume" },
 		{ "<leader>fh", "<cmd>FzfLua helptags<cr>", desc = "Find Help tags" },

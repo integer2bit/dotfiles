@@ -83,7 +83,7 @@ return {
 		-- },
 		daily_notes = {
 			folder = "dailies",
-			date_format = "%Y-%m-%d",
+			date_format = "%Y-%m-%d %A",
 			alias_format = "%B %-d, %Y",
 		},
 		picker = {

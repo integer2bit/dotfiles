@@ -1,7 +1,3 @@
 {
-  "diagnostics.globals": ["vim", "dashboard", "stylua", "blue",
-        "s"],
-    "diagnostics.disable": [
-        "undefined-global"
-    ]
+  "diagnostics.globals": ["vim", "dashboard", "stylua", "blue", "s"]
 }
