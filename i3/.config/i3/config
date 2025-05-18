@@ -80,7 +80,7 @@ for_window [class="Anki"] floating enable
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec env GLFW_IM_MODULE=ibus kitty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill

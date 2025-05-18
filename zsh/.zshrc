@@ -109,6 +109,8 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light jeffreytse/zsh-vi-mode
 
+# zsh-autosuggestion
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#848489,bold"
 # Completion styling
 fpath=(~/.local/share/zinit/completions/src $fpath)
 autoload -Uz compinit && compinit

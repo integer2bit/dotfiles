@@ -1,6 +1,7 @@
 return {
 	"L3MON4D3/LuaSnip",
 	version = "v2.*",
+	run = "make install_jsregexp",
 	event = { "InsertEnter" },
 	opts = function(_, opts)
 		require("luasnip.loaders.from_lua").load({
