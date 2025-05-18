@@ -35,6 +35,9 @@ return {
 					["ctrl-h"] = actions.toggle_hidden,
 				},
 			},
+			files = {
+				fd_opts = [[--color=never --hidden --type f --type l --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,.cache,.ghcup,.conda,.rustup,.cargo,.local,.obsidian} --strip-cwd-prefix]],
+			},
 			oldfiles = {
 				prompt = "History❯ ",
 				cwd_only = true,
