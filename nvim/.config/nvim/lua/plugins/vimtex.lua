@@ -10,6 +10,10 @@ return {
 		-- vim.g.vimtex_view_general_options = "--unique file:@pdf\\#src:@line@tex"
 		-- vim.g.Tex_CompileRule_pdf = "xelatex -synctex=1 --interaction=nonstopmode $*"
 		vim.g.vimtex_compiler_method = "latexmk"
+		vim.g.vimtex_compiler_latexmk = {
+			aux_dir = "/home/world/.latex/",
+			out_dir = "/home/world/.latex/",
+		}
 		vim.g.vimtex_compiler_latexmk_engines = {
 			["_"] = "-xelatex",
 			-- ["_"] = "-pdflatex",
