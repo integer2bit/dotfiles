@@ -62,12 +62,12 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - rofi (app launcher)
 - rofi-emoji (xdotool, xclip needed)
 - feh(wallpaper)
+- imagemagic(i3lock)
 - thunar (xfce4 file manager), gvfs gvfs-dnssd (trashbin and webdav support) 
 - maim (screenshot)
 - copyq (multi-media clipboard)
 - pavucontrol(audio control)
 - acpilight (xbacklight excutable provided)
-- i3lock-fancy(aur, better lock style)
 
 ## mpv
 
