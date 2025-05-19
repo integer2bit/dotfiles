@@ -55,8 +55,8 @@ return {
 	end,
 	keys = {
 		{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Fuzzy Find files" },
-		{ "<leader>fo", "<cmd>FzfLua oldfiles<cr>", desc = "Fuzzy find Oldfiles files" },
-		{ "<leader>fr", "<cmd>FzfLua resume<cr>", desc = "Fuzzy Resume" },
+		{ "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Fuzzy find Oldfiles files" },
+		{ "<leader>fR", "<cmd>FzfLua resume<cr>", desc = "Fuzzy Resume" },
 		{ "<leader>fh", "<cmd>FzfLua helptags<cr>", desc = "Find Help tags" },
 		{ "<leader>fs", "<cmd>FzfLua live_grep<cr>", desc = "Find String in cwd" },
 		{ "<leader>fb", "<cmd>FzfLua buffers<cr>", desc = "Find Buffer" },
