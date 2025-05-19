@@ -3,7 +3,7 @@ return {
 	version = "v2.*",
 	run = "make install_jsregexp",
 	event = { "InsertEnter" },
-	opts = function(_, opts)
+	opts = function()
 		require("luasnip.loaders.from_lua").load({
 			paths = { vim.fn.stdpath("config") .. "/luasnippets" },
 		})
