@@ -12,8 +12,10 @@ vim.g.markdown_recommended_style = 0 -- set default tabstop in markdown file
 -- vim number
 opt.number = true
 opt.relativenumber = true
+-- vim statusline
+-- opt.statusline = "%f%m%h%r"
 -- scrolloff, keep the cursor at the middle of screen
--- opt.scrolloff = 999
+opt.scrolloff = 999
 -- jumpoptions
 opt.jumpoptions = "stack,view"
 -- set vim spell check

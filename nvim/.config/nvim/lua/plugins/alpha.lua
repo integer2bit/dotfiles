@@ -1,7 +1,7 @@
 return {
 	"goolord/alpha-nvim",
 	dependencies = {
-		"echasnovski/mini.icons",
+		"nvim-tree/nvim-web-devicons",
 		"nvim-lua/plenary.nvim",
 	},
 	opts = function()

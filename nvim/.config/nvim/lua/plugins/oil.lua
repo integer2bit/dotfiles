@@ -1,6 +1,6 @@
 return {
 	"stevearc/oil.nvim",
-	dependencies = { { "echasnovski/mini.icons", opts = {} } },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
 	-- Optional dependencies
 	opts = {
