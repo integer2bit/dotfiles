@@ -17,12 +17,21 @@
 
 # Config syntax crash course
 # ==========================
-window-decoration = false
-theme = OneHalfDark
+# color scheme
+# theme = OneHalfDark
+theme = NvimDark
+# theme = gruvbox-material
+# font settings
 font-family = JetBrainsMono Nerd Font Mono
 font-style = SemiBold
 font-style-bold = ExtraBold
 font-style-italic = SemiBold Italic
 font-style-bold-italic = ExtraBold Italic
 font-size = 12
+# window settings
 window-padding-x = 10
+window-decoration = false
+# disable close confirm surface
+confirm-close-surface = false
+# disable copy notifications
+app-notifications = false
