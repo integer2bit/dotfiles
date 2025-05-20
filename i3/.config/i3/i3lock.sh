@@ -2,7 +2,7 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 # --- Configuration ---
-xset dpms force off
+# xset dpms force off
 BLUR_LEVEL="0x5"                                 # Sigma for Gaussian blur (0 for auto-radius, 5 for sigma)
 TMP_SCREENSHOT_BLURRED="/tmp/screen_blurred.png" # Only one temp file needed
 
@@ -16,4 +16,5 @@ if [ -f "$TMP_SCREENSHOT_BLURRED" ]; then
 fi
 
 echo "Script finished."
+xset dpms force off
 exit 0

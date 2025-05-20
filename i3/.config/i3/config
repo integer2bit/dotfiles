@@ -217,6 +217,9 @@ bar {
      background #282c34
      statusline #a6d189
     }
+    mode hide
+    hidden_state hide
+    modifier Mod4
 }
 #Hide window title bar
 default_border pixel 1

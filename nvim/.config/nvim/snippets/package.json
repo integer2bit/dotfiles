@@ -18,13 +18,20 @@
       },
       {
         "language": "lua",
-        "path": ",/lua.json"
+        "path": "./lua.json"
       },
       {
         "language": [
           "gitcommit"
         ],
         "path": "./gitcommit.json"
+      },
+      {
+        "language": [
+          "markdown",
+          "rmd"
+        ],
+        "path": "./markdown.json"
       }
     ]
   }
