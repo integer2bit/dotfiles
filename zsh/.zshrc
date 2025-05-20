@@ -1,9 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 # make zsh default shell
 # chsh -s $(which zsh)
 ### ZSH env
@@ -101,7 +95,6 @@ eval "$(fzf --zsh)"
 
 ### themes
 zinit ice depth=1; 
-zinit light romkatv/powerlevel10k
 ### plugins
 
 zinit light zsh-users/zsh-syntax-highlighting
@@ -155,6 +148,4 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 ## xrandr --output eDP --mode 2880x1800 --scale 0.5x0.5
 alias xon='xrandr --output eDP --auto'
 
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(starship init zsh)"

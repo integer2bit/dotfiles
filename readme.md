@@ -43,6 +43,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 ## zsh dependencies
 
 - [fzf](https://github.com/junegunn/fzf)
+- [starship](https://github.com/starship/starship)
 
 ### Installation
 
