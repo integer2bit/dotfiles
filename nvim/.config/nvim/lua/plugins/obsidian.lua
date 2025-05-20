@@ -61,7 +61,7 @@ return {
 			end
 
 			-- Get the current timestamp in the desired format.
-			local timestamp = os.date("%Y-%m-%d-%H-%M-%S")
+			local timestamp = os.date("%Y-%m-%d-%A")
 
 			return timestamp .. (suffix ~= "" and "-" .. suffix or "")
 		end,

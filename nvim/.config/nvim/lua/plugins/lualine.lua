@@ -1,10 +1,24 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+
 	opts = function()
+		local custom_gruvbox = require("lualine.themes.gruvbox")
+		custom_gruvbox.normal = {
+			a = { fg = "#d6d9e0", bg = "#14161b" },
+			b = { fg = "#d6d9e0", bg = "#14161b" },
+			c = { fg = "#d6d9e0", bg = "#14161b" },
+		}
+		custom_gruvbox.insert = {}
+		custom_gruvbox.visual = {}
+		custom_gruvbox.replace = {}
+		custom_gruvbox.command = {}
+		custom_gruvbox.terminal = {}
+		custom_gruvbox.inactive = {}
+
 		require("lualine").setup({
 			options = {
-				theme = "auto",
+				theme = "gruvbox",
 			},
 			sections = {
 				lualine_a = {
@@ -19,11 +33,11 @@ return {
 						"selectioncount",
 						-- color = { fg = "#d6d9e0", bg = "#14161b" },
 						max_length = vim.o.columns,
-						color = function(section)
-							return {
-								fg = vim.bo.modified and "#d6d9e0" or "#14161b",
-							}
-						end,
+						-- color = function(section)
+						-- 	return {
+						-- 		fg = vim.bo.modified and "#d6d9e0" or "#14161b",
+						-- 	}
+						-- end,
 					},
 				},
 				lualine_x = {
@@ -32,7 +46,7 @@ return {
 						"fileformat",
 						"filetype",
 						draw_empty = true,
-						color = { fg = "#d6d9e0", bg = "#14161b" },
+						-- color = { fg = "#d6d9e0", bg = "#14161b" },
 					},
 				},
 				lualine_y = { "progress" },
