@@ -38,7 +38,17 @@ return {
 			completion = { menu = { auto_show = true } },
 		},
 		-- Displays a preview of the selected item on the current line
-		completion = {},
+		completion = {
+			menu = {
+				draw = {
+					columns = {
+						{ "label", "label_description", gap = 1 },
+						{ "kind_icon", "kind" },
+					},
+					treesitter = { "lsp" },
+				},
+			},
+		},
 		signature = {
 			enabled = true,
 		},
