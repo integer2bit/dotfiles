@@ -143,7 +143,7 @@ alias la='ls -a'
 alias cl='clear'
 alias wifioff='nmcli radio wifi off'
 alias cdob='cd $HOME/Documents/obsidian/'
-alias rcmount='rclone mount onedrive:/ ~/Cloud/onedrive/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode writes --daemon'
+alias rcmount='rclone mount personal:/ ~/Cloud/personal/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode writes --daemon'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 ## xrandr --output eDP --mode 2880x1800 --scale 0.5x0.5
 alias xon='xrandr --output eDP --auto'
