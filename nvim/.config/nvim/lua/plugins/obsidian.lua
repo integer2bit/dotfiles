@@ -21,29 +21,6 @@ return {
 				path = vim.fn.expand("~/Documents/obsidian"),
 			},
 		},
-		mappings = {
-			-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-			["gf"] = {
-				action = function()
-					return require("obsidian").util.gf_passthrough()
-				end,
-				opts = { noremap = false, expr = true, buffer = true },
-			},
-			-- Toggle check-boxes.
-			["<leader>oc"] = {
-				action = function()
-					return require("obsidian").util.toggle_checkbox()
-				end,
-				opts = { buffer = true, desc = "toggle check-boxes" },
-			},
-			-- Smart action depending on context, either follow link or toggle checkbox.
-			["<cr>"] = {
-				action = function()
-					return require("obsidian").util.smart_action()
-				end,
-				opts = { buffer = true },
-			},
-		},
 		-- Optional, customize how wiki link are generated
 		wiki_link_func = function(opts)
 			return require("obsidian.util").wiki_link_path_only(opts)
@@ -125,17 +102,15 @@ return {
 			end
 			return out
 		end,
+		checkbox = {
+			order = { " ", "x" },
+		},
+
 		ui = {
 			enable = true, -- set to false to disable all additional syntax features
 			update_debounce = 200, -- update delay after a text change (in milliseconds)
 			-- Define how various check-boxes are displayed
-			checkboxes = {
-				-- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
-				[" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-				["x"] = { char = "", hl_group = "ObsidianDone" },
-				[">"] = { char = "", hl_group = "ObsidianRightArrow" },
-				["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-			},
+			-- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
 			-- Use bullet marks for non-checkbox lists.
 			bullets = { char = "•", hl_group = "ObsidianBullet" },
 			external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
@@ -164,15 +139,25 @@ return {
 			img_folder = "assets",
 		},
 		--keymaps
-		vim.keymap.set("n", "<leader>od", "<cmd>ObsidianDailies<cr>", { desc = "Obsidian daily note" }),
-		vim.keymap.set("n", "<leader>ot", "<cmd>ObsidianTags<cr>", { desc = "Search tags" }),
-		vim.keymap.set("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Search Obsidian" }),
-		vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianOpen<cr>", { desc = "Open in Obsidian App" }),
-		vim.keymap.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<CR>", { desc = "Show ObsidianBacklinks" }),
-		vim.keymap.set("v", "<leader>oL", "<cmd>ObsidianLink<cr>", { desc = "Link visual text to a note" }),
-		vim.keymap.set("v", "<leader>ol", "<cmd>ObsidianLinkNew<cr>", { desc = "Create link to a new note" }),
-		vim.keymap.set("n", "<leader>ol", "<cmd>ObsidianLinks<cr>", { desc = "ObsidianLinks in current file" }),
-		vim.keymap.set("n", "<leader>or", "<cmd>ObsidianRename<CR>", { desc = "Obsidian rename" }),
-		vim.keymap.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "Create New Note" }),
+		legacy_commands = false,
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "ObsidianNoteEnter",
+			callback = function(ev)
+				vim.keymap.set("n", "<leader>oc", "<cmd>Obsidian toggle_checkbox<cr>", {
+					buffer = ev.buf,
+					desc = "Toggle checkbox",
+				})
+			end,
+		}),
+		vim.keymap.set("n", "<leader>od", "<cmd>Obsidian dailies<cr>", { desc = "Obsidian daily note" }),
+		vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian tags<cr>", { desc = "Search tags" }),
+		vim.keymap.set("n", "<leader>os", "<cmd>Obsidian search<cr>", { desc = "Search Obsidian" }),
+		vim.keymap.set("n", "<leader>oo", "<cmd>Obsidian open<cr>", { desc = "Open in Obsidian App" }),
+		vim.keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<CR>", { desc = "Show ObsidianBacklinks" }),
+		vim.keymap.set("v", "<leader>oL", "<cmd>Obsidian link<cr>", { desc = "Link visual text to a note" }),
+		vim.keymap.set("v", "<leader>ol", "<cmd>Obsidian linkNew<cr>", { desc = "Create link to a new note" }),
+		vim.keymap.set("n", "<leader>ol", "<cmd>Obsidian links<cr>", { desc = "ObsidianLinks in current file" }),
+		vim.keymap.set("n", "<leader>or", "<cmd>Obsidian rename<CR>", { desc = "Obsidian rename" }),
+		vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new<CR>", { desc = "Create New Note" }),
 	},
 }
