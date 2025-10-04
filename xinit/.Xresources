@@ -9,6 +9,7 @@ Xft.rgba: rgb
 Xft.font: Noto Sans CJK SC 12
 
 Xcursor.size: 32
+! Xcursor.size: 48
 
 URxvt*font: xft:Noto Sans Mono:size=14
 URxvt*boldFont: xft:Noto Sans Mono:bold:size=14

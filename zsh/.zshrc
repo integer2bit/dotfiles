@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # make zsh default shell
 # chsh -s $(which zsh)
 ### ZSH env
@@ -47,7 +54,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 if [ "$(id -u)" -eq 0 ]; then
   PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 else
-  PATH="/usr/local/bin:/usr/bin:/bin:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin"
+  PATH="/usr/local/bin:/usr/bin:/bin:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin:$HOME/.nix-profile/bin"
 fi
 export PATH
 
@@ -97,6 +104,7 @@ eval "$(fzf --zsh)"
 zinit ice depth=1; 
 ### plugins
 
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -147,5 +155,9 @@ alias rcmount='rclone mount personal:/ ~/Cloud/personal/ --copy-links --allow-ot
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 ## xrandr --output eDP --mode 2880x1800 --scale 0.5x0.5
 alias xon='xrandr --output eDP --auto'
+alias xoff='xset dpms force off'
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
