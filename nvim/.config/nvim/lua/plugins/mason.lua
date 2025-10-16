@@ -20,6 +20,7 @@ return {
 				-- language server
 				"lua-language-server",
 				"bash-language-server",
+				"marksman",
 				"ruff",
 				"html-lsp",
 				"typescript-language-server",

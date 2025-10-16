@@ -68,6 +68,7 @@ return {
 		{ "<leader>gr", "<cmd>FzfLua lsp_references<CR>", desc = "Show LSP references" },
 		{ "<leader>gd", "<cmd>FzfLua lsp_definitions<CR>", desc = "Show LSP definitions" },
 		{ "<leader>gt", "<cmd>FzfLua lsp_typedefs<CR>", desc = "Show LSP type definitions" },
+		{ "<leader>gs", "<cmd>FzfLua lsp_document_symbols<CR>", desc = "Show LSP docuemnt symbols" },
 		{ "<leader>D", "<cmd>FzfLua diagnostics_workspace<CR>", desc = "Show workspace diagnostics" },
 	},
 }
