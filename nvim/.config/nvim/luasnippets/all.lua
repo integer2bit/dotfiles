@@ -13,12 +13,6 @@ local function get_future_time_offset_by_hours(hours_to_add)
 	local future_time_seconds = current_time_seconds + offset_seconds
 	return { os.date("%Y-%m-%d %H:%M", future_time_seconds) }
 end
-local function get_offset_date_time(days_offset)
-	local current_time_seconds = os.time()
-	local day_in_seconds = 24 * 60 * 60
-	local target_time_seconds = current_time_seconds + (days_offset * day_in_seconds)
-	return { os.date("%Y-%m-%d %H:%M", target_time_seconds) }
-end
 
 local snippets = {}
 for i = 1, 60 do
@@ -56,24 +50,35 @@ for i = 1, 12 do
 		)
 	)
 end
+
 table.insert(
 	snippets,
 	s(
-		"tomorrow",
+		"today",
 		{ f(function()
-			return get_offset_date_time(1)
+			return os.date("%Y-%m-%d-%A")
 		end) },
-		{ description = "Tomorrow's date & current time (YYYY-MM-DD HH:MM)" }
+		{ description = "Today's date (YYYY-MM-DD-Weekday)" }
 	)
 )
+
 table.insert(
 	snippets,
-	s(
-		"yesterday",
-		{ f(function()
-			return get_offset_date_time(-1)
-		end) },
-		{ description = "Yesterday's date & current time (YYYY-MM-DD HH:MM)" }
-	)
+	s("yesterday", {
+		f(function()
+			local yesterday_timestamp = os.time() - 24 * 60 * 60
+			return os.date("%Y-%m-%d-%A", yesterday_timestamp)
+		end),
+	}, { description = "Yesterday's date (YYYY-MM-DD-Weekday)" })
+)
+
+table.insert(
+	snippets,
+	s("tomorrow", {
+		f(function()
+			local tomorrow_timestamp = os.time() + 24 * 60 * 60
+			return os.date("%Y-%m-%d-%A", tomorrow_timestamp)
+		end),
+	}, { description = "Tomorrow's date (YYYY-MM-DD-Weekday)" })
 )
 return snippets
