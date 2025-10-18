@@ -154,7 +154,7 @@ alias rcmount='rclone mount personal:/ ~/Cloud/personal/ --copy-links --allow-ot
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 ## about notes
 alias cdn='cd $HOME/Documents/notes/'
-alias rcupload='rclone sync -v ~/Documents/notes/ onedrive:/notes '
+alias rcupload='rclone sync -v ~/Documents/notes/ onedrive:/notes/'
 alias rcdownload='rclone sync -v onedrive:/notes ~/Documents/notes/'
 
 ## xrandr --output eDP --mode 2880x1800 --scale 0.5x0.5
