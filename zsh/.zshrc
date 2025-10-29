@@ -150,12 +150,13 @@ alias ls='ls -F --color=none'
 alias la='ls -a'
 alias cl='clear'
 alias wifioff='nmcli radio wifi off'
-alias rcmount='rclone mount personal:/ ~/Cloud/personal/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode writes --daemon'
+alias rcmountp='rclone mount personal:/ ~/Cloud/personal/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode writes --daemon'
+alias rcmounto='rclone mount onedrive:/ ~/Cloud/onedrive/ --copy-links --allow-other --allow-non-empty --umask 000 --vfs-cache-mode writes --daemon'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 ## about notes
 alias cdn='cd $HOME/Documents/notes/'
-alias rcupload='rclone sync -v ~/Documents/notes/ onedrive:/notes/'
-alias rcdownload='rclone sync -v onedrive:/notes ~/Documents/notes/'
+alias rcupload='rclone sync -v ~/Documents/notes/ personal:/notes/'
+alias rcdownload='rclone sync -v personal:/notes ~/Documents/notes/'
 
 ## xrandr --output eDP --mode 2880x1800 --scale 0.5x0.5
 alias xon='xrandr --output eDP --auto'
