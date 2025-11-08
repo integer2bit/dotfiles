@@ -85,13 +85,11 @@ table.insert(
 table.insert(
 	snippets,
 	s(
-		"blog",
+		"daily",
 		fmt(
 			[[
 ---
 title: "{}"
-description: ""
-tags: []
 date: {}
 ---
 ]],
@@ -101,6 +99,36 @@ date: {}
 				end),
 				f(function()
 					return os.date("%Y-%m-%d %H:%M")
+				end),
+			}
+		)
+	)
+)
+
+table.insert(
+	snippets,
+	s(
+		"blog",
+		fmt(
+			[[
+---
+title: "{}"
+description: ""
+tags: []
+date: {}
+---
+
+# {}
+]],
+			{
+				f(function(_, snip)
+					return snip.env.TM_FILENAME_BASE or ""
+				end),
+				f(function()
+					return os.date("%Y-%m-%d %H:%M")
+				end),
+				f(function(_, snip)
+					return snip.env.TM_FILENAME_BASE or ""
 				end),
 			}
 		)
