@@ -41,3 +41,23 @@ vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close current t
 vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- Create new note
+vim.keymap.set("n", "<leader>on", function()
+	local notes_dir = vim.fn.expand("~/Documents/notes/")
+	if vim.fn.isdirectory(notes_dir) == 0 then
+		vim.fn.mkdir(notes_dir, "p")
+		print("create notes dir: " .. notes_dir)
+	end
+	local filename = vim.fn.input("filename: ", "", "file")
+	if filename == "" then
+		print("cancel create")
+		return
+	end
+	local file_path = vim.fn.fnameescape(notes_dir .. filename .. ".md")
+	vim.cmd("edit " .. file_path)
+end, {
+	noremap = true,
+	silent = true,
+	desc = "[O]pen [N]ote",
+})
