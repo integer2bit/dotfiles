@@ -233,7 +233,7 @@ bar {
     do sleep 1; done
     colors {
         statusline #ffffff
-        background #323232
+        background #282c34
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }

@@ -58,7 +58,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 ## window manager
 ### sway(main)
 #### dependencies and tools
-- sway swaybg swayidle
+- sway swaybg swayidle swaylock
 - dependencies
   - meson wlroots0.18 wlroots0.19 wayland wayland-protocols pcre2 json-c pango cairo xorg-xwayland
 - kitty (terminal)
