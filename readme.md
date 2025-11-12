@@ -7,6 +7,7 @@
 - zsh
 - mpv
 - i3(with i3status)
+- sway(wayland)
 - zathura(pdf viewer, with zathura-pdf-mupdf)
 
 ## Installation 
@@ -54,9 +55,25 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep),[fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf), tree, git, wget, unzip, gzip, nodejs, npm, python3, python-pip, clang, make, cmake, texlive, (for vimtex), tree-sitter-cli, (for latex parser)
 
-## i3
-### dependencies and tools
+## window manager
+### sway(main)
+#### dependencies and tools
+- sway swaybg swayidle
+- dependencies
+  - meson wlroots0.18 wlroots0.19 wayland wayland-protocols pcre2 json-c pango cairo xorg-xwayland
+- kitty (terminal)
+- rofi (app launcher)
+- rofi-emoji
+- swayimg(imgvivwer)
+- grim(screenshot)
+- slurp(screenshot)
+- brightnessctl(brightness control)
+- thunar (xfce4 file manager), gvfs gvfs-dnssd (trashbin and webdav support) 
 
+### i3(optional)
+#### dependencies and tools
+- dependencies
+  - i3 xorg-server xorg-xinit 
 - kitty (terminal)
 - picom(compositor)
 - rofi (app launcher)

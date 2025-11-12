@@ -158,10 +158,13 @@ alias cdn='cd $HOME/Documents/notes/'
 alias rcupload='rclone sync -v ~/Documents/notes/ personal:/notes/'
 alias rcdownload='rclone sync -v personal:/notes ~/Documents/notes/'
 
-## xrandr --output eDP --mode 2880x1800 --scale 0.5x0.5
-alias xon='xrandr --output eDP --auto'
-alias xoff='xset dpms force off'
+## xrandr(xorg) --output eDP --mode 2880x1800 --scale 0.5x0.5
+# alias xon='xrandr --output eDP --auto'
+# alias xoff='xset dpms force off'
 
+## sway
+alias xon='sway output eDP-1 enable'
+# alias xoff='sway output eDP-1 disable'
 # eval "$(starship init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
