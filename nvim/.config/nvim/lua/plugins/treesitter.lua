@@ -22,7 +22,7 @@ return {
 						return true
 					end
 				end,
-				additional_vim_regex_highlighting = { "latex", "markdown" },
+				additional_vim_regex_highlighting = { "latex" },
 			},
 			indent = { enable = true },
 			-- enable autotagging (w/ nvim-ts-autotag plugin)
