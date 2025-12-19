@@ -34,8 +34,8 @@ output "*" bg ~/.config/sway/Yanami.jpg fill
 
 # timeout
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 1800 'swaylock -f -c 000000' \
+         timeout 3600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 
 exec_always --no-startup-id fcitx5
@@ -224,7 +224,7 @@ input "type:touchpad" {
 # sway-bar
 bar {
     position bottom
-    # mode hide
+    mode hide
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command while echo Volume:$(pamixer --get-volume-human) ｜ \
