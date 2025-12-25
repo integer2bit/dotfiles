@@ -67,7 +67,8 @@ bindsym Mod4+e exec thunar
 
 # screenshot tools
 bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
-bindsym Mod4+Shift+s exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+# bindsym Mod4+Shift+s exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+bindsym $mod+Shift+s exec grim - | tee ~/Pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png | wl-copy -t image/png
 
 # rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun 
@@ -224,7 +225,7 @@ input "type:touchpad" {
 # sway-bar
 bar {
     position bottom
-    mode hide
+    # mode hide
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command while echo Volume:$(pamixer --get-volume-human) ｜ \
