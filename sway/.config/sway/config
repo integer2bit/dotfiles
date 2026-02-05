@@ -220,6 +220,11 @@ input "type:touchpad" {
     tap_button_map lrm
     middle_emulation enabled
 }
+## Mouse configuration
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0
+}
 
 
 # sway-bar
