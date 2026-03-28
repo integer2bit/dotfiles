@@ -16,7 +16,7 @@ return {
 					{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
 					{
 						icon = " ",
-						key = "g",
+						key = "s",
 						desc = "Find Text",
 						action = ":lua Snacks.dashboard.pick('live_grep')",
 					},

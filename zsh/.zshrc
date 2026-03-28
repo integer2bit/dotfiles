@@ -162,7 +162,7 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias cdn='cd $HOME/Documents/notes/'
 alias rcupload='rclone sync -v ~/Documents/notes/ personal:/notes/'
 alias rimeupload='rclone sync -v /mnt/win/Users/world/AppData/Roaming/Rime/sync/ personal:/rime/sync'
-alias rimedownload='rclone sync -v personal:/rime/sync /mnt/win/Users/world/AppData/Roaming/Rime/sync'
+alias rimedownload='rclone copy -v personal:/rime/sync /home/world/Downloads/rimesync'
 alias rcdownload='rclone sync -v personal:/notes ~/Documents/notes/'
 
 ## xrandr(xorg) --output eDP --mode 2880x1800 --scale 0.5x0.5
