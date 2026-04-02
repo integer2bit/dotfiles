@@ -1,5 +1,4 @@
 -- Refernce:https://vieitesss.github.io/posts/Neovim-custom-status-line/#full-implementation
-Statusline = {}
 vim.opt.showcmd = true
 vim.opt.showcmdloc = "statusline"
 
@@ -9,7 +8,7 @@ vim.api.nvim_create_autocmd({ "RecordingEnter", "RecordingLeave" }, {
 	end,
 })
 
-function Statusline.get_diagnostics()
+local function get_diagnostics()
 	if #vim.lsp.get_clients({ bufnr = 0 }) == 0 then
 		return ""
 	end
@@ -29,13 +28,9 @@ function Statusline.get_diagnostics()
 
 	return #result > 0 and (table.concat(result, " ") .. " ") or ""
 end
-vim.api.nvim_create_autocmd("DiagnosticChanged", {
-	callback = function()
-		vim.cmd("redrawstatus")
-	end,
-})
 
-function Statusline.active()
+local M = {}
+function M.active()
 	local keys = " %S "
 	-- macro recording
 	local reg = vim.fn.reg_recording()
@@ -47,7 +42,7 @@ function Statusline.active()
 	-- filetype
 	local filetype = "%Y"
 	-- lsp diagnostics
-	local diagnostics = Statusline.get_diagnostics()
+	local diagnostics = get_diagnostics()
 	-- percentage and the current line and column of the cursor
 	local percentage = "%p%%"
 	local position = "%l:%c"
@@ -57,7 +52,7 @@ function Statusline.active()
 	return left_section .. align_right .. right_section
 end
 
-function Statusline.inactive()
+function M.inactive()
 	return "[%f] %m"
 end
 
@@ -77,7 +72,7 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
 	group = group,
 	desc = "Activate statusline on focus",
 	callback = function()
-		vim.opt_local.statusline = "%!v:lua.Statusline.active()"
+		vim.opt_local.statusline = "%!v:lua.require('opt.statusline').active()"
 	end,
 })
 
@@ -85,6 +80,8 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 	group = group,
 	desc = "Deactivate statusline when unfocused",
 	callback = function()
-		vim.opt_local.statusline = "%!v:lua.Statusline.inactive()"
+		vim.opt_local.statusline = "%!v:lua.require('opt.statusline').inactive()"
 	end,
 })
+
+return M
