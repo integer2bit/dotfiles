@@ -3,3 +3,4 @@ vim.g.maplocalleader = ","
 require("opt.keymap")
 require("opt.options")
 require("opt.lsp")
+require("opt.statusline")
