@@ -230,23 +230,28 @@ input "type:pointer" {
 
 
 # sway-bar
+bindsym $mod+b exec killall -SIGUSR1 waybar
 bar {
-    position bottom
-    mode hide
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while echo Volume:$(pamixer --get-volume-human) ｜ \
-    $(date +'%Y-%m-%d %H:%M:%S') ｜ \
-    Battery: $(cat /sys/class/power_supply/BAT0/capacity) %;  \
-    do sleep 1; done
-    colors {
-        statusline #ffffff
-        background #282c34
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
+    # position bottom
+    # mode hide
+    # modifier none 
+    # # When the status_command prints a new line to stdout, swaybar updates.
+    # # The default just shows the current date and time.
+    # status_command while echo Volume:$(pamixer --get-volume-human) ｜ \
+    # $(date +'%Y-%m-%d %H:%M:%S') ｜ \
+    # Battery: $(cat /sys/class/power_supply/BAT0/capacity) %;  \
+    # do sleep 1; done
+    # colors {
+    #     statusline #ffffff
+    #     background #282c34
+    #     inactive_workspace #32323200 #32323200 #5c5c5c
+    # }
 }
 
 #Hide window title bar
 default_border pixel 1
 default_floating_border pixel 1
 for_window [class="^.*"] border pixel 1
+hide_edge_borders smart
+titlebar_border_thickness 0
