@@ -230,7 +230,7 @@ input "type:pointer" {
 
 
 # sway-bar
-bindsym $mod+b exec killall -SIGUSR1 waybar
+bindsym $mod+z exec killall -SIGUSR1 waybar
 bar {
     swaybar_command waybar
     # position bottom

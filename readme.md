@@ -1,12 +1,11 @@
 # My personal config file
 
 - neovim(in ArchLinux)
-  - intergrate with obsidian
 - tmux
 - aria2
 - zsh
 - mpv
-- i3(with i3status)
+- i3(x11)
 - sway(wayland)
 - zathura(pdf viewer, with zathura-pdf-mupdf)
 
@@ -30,10 +29,6 @@ Or you can also stow single directory like stow zsh, this will only link the con
 
 ## tmux
 
-### dependencies
-
-- xclip for tmux yank and clipboard
-
 ### Install config
 
 Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux sessions
@@ -56,7 +51,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - [ripgrep](https://github.com/BurntSushi/ripgrep),[fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf), tree, git, wget, unzip, gzip, nodejs, npm, python3, python-pip, clang, make, cmake, texlive, (for vimtex), tree-sitter-cli, (for latex parser)
 
 ## window manager
-### sway(main)
+### [sway](https://github.com/swaywm/sway)(main)
 #### dependencies and tools
 - sway swaybg swayidle swaylock
 - dependencies
@@ -64,6 +59,7 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - kitty (terminal)
 - rofi (app launcher)
 - rofi-emoji
+- waybar (status bar)
 - swayimg(imgvivwer)
 - grim(screenshot)
 - slurp(screenshot)
