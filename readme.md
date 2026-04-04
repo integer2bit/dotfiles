@@ -48,7 +48,21 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 
 ## neovim plugins dependencies
 
-- [ripgrep](https://github.com/BurntSushi/ripgrep),[fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf), tree, git, wget, unzip, gzip, nodejs, npm, python3, python-pip, clang, make, cmake, texlive, (for vimtex), tree-sitter-cli, (for latex parser)
+- [ripgrep](https://github.com/BurntSushi/ripgrep),[fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf), git, wget, unzip, gzip, nodejs, npm, python3, python-pip, clang, make, cmake, texlive, (for vimtex), tree-sitter-cli, (for latex parser)
+
+- Language server and formatter(ArchLinuxRepo)
+  - bash-language-server
+  - typescript-language-server
+  - vscode-html-languageserver
+  - vscode-json-languageserver
+  - vscode-css-languageserver
+  - yaml-language-server
+  - lua-language-server
+  - marksman
+  - prettier
+  - shfmt
+  - stylua
+  - ruff
 
 ## window manager
 ### [sway](https://github.com/swaywm/sway)(main)

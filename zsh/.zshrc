@@ -1,6 +1,5 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Initialization code that may require console input (password prompts, [y/n] confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -59,7 +58,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 if [ "$(id -u)" -eq 0 ]; then
   PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 else
-  PATH="/usr/local/bin:/usr/bin:/bin:$HOME/go/bin:$HOME/.local/share/nvim/mason/bin:$HOME/.nix-profile/bin"
+  PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:/bin:$HOME/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 fi
 export PATH
 
