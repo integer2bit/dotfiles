@@ -29,7 +29,7 @@ return {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"shfmt", -- bash shell formatter
-				"jsonlint", --json linter
+				"json-lsp",
 			},
 		},
 	},
