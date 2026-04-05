@@ -60,6 +60,7 @@ return {
 		{ "<leader>fh", "<cmd>FzfLua helptags<cr>", desc = "Find Help tags" },
 		{ "<leader>fs", "<cmd>FzfLua live_grep<cr>", desc = "Find String in cwd" },
 		{ "<leader>fb", "<cmd>FzfLua buffers<cr>", desc = "Find Buffer" },
+		{ "<leader>fb", "<cmd>FzfLua tabs<cr>", desc = "Find tabs" },
 		{ "<leader>fc", "<cmd>FzfLua grep_cword<cr>", desc = "Find string under Cursor in cwd" },
 		{ '<leader>f"', "<cmd>FzfLua registers<cr>", desc = "register list" },
 		{ "<leader>f'", "<cmd>FzfLua marks<cr>", desc = "mark list" },
