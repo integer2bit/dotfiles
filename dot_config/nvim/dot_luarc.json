@@ -1,0 +1,3 @@
+{
+  "diagnostics.globals": ["vim", "dashboard", "stylua", "blue", "s"]
+}

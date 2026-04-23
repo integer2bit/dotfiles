@@ -1,0 +1,19 @@
+# Zathura configuration file
+# See man `man zathurarc'
+
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+#zoom settings
+set guioptions ""
+
+# font size
+set font "Monospace 12"
+
+# clipboard configurations
+set selection-clipboard clipboard
+
+#stop at page boundries
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 300

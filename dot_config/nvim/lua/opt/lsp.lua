@@ -1,0 +1,45 @@
+-- keymap
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics" }) -- show diagnostics for line
+vim.keymap.set("n", "<leader>th", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "[T]oggle Inlay [H]ints" })
+-- vim.lsp.diagnostic settings
+vim.diagnostic.config({
+	float = {
+		source = true,
+	},
+	virtual_lines = {
+		current_line = true,
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.HINT] = "󰠠",
+			[vim.diagnostic.severity.INFO] = "",
+		},
+	},
+})
+
+vim.api.nvim_create_autocmd("LspProgress", {
+	callback = function(ev)
+		local value = ev.data.params.value
+		vim.api.nvim_echo({ { value.message or "done" } }, false, {
+			id = "lsp." .. ev.data.client_id,
+			kind = "progress",
+			source = "vim.lsp",
+			title = value.title,
+			status = value.kind ~= "end" and "running" or "success",
+			percent = value.percentage,
+		})
+	end,
+})
+
+-- Enable LSP servers
+local lsp_configs = {}
+for _, v in ipairs(vim.api.nvim_get_runtime_file("lsp/*", true)) do
+	local name = vim.fn.fnamemodify(v, ":t:r")
+	lsp_configs[name] = true
+end
+
+vim.lsp.enable(vim.tbl_keys(lsp_configs))
