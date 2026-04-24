@@ -175,8 +175,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        // active-color "#7fc8ff"
-        active-color "#B3F6C0"
+        active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
         //
@@ -637,5 +636,3 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
-
-include "dms/cursor.kdl"

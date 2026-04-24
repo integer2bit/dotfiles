@@ -199,7 +199,7 @@
     "theme": "System Default",
     "size": 24,
     "niri": {
-      "hideWhenTyping": false,
+      "hideWhenTyping": true,
       "hideAfterInactiveMs": 0
     },
     "hyprland": {
@@ -267,7 +267,7 @@
   "matugenTemplateMangowc": true,
   "matugenTemplateQt5ct": true,
   "matugenTemplateQt6ct": true,
-  "matugenTemplateFirefox": true,
+  "matugenTemplateFirefox": false,
   "matugenTemplatePywalfox": true,
   "matugenTemplateZenBrowser": true,
   "matugenTemplateVesktop": true,
