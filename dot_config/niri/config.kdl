@@ -167,7 +167,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 2
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -175,15 +175,14 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        // active-color "#7fc8ff"
-        active-color "#B3F6C0"
+        active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
-
+        // inactive-color "#505050"
+        inactive-color "#282a3600" 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
         // The angle is the same as in linear-gradient, and is optional,
@@ -206,9 +205,9 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        width 2
+        active-color "#ffffff"
+        inactive-color "#00000000"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -336,6 +335,27 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    clip-to-geometry false
+    geometry-corner-radius 0
+}
+
+window-rule {
+    match is-active=true
+    clip-to-geometry true
+    geometry-corner-radius 20
+    shadow {
+      on
+      softness 15
+      spread 5
+      color "#000000ff"
+    }
+}
+
+window-rule {
+    match is-active=false
+    shadow { off ;}
+}
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
