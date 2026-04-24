@@ -119,7 +119,7 @@ output "eDP-1" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 2
+    gaps 0
     background-color "#000000"
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -164,7 +164,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
+        off
 
         // How many logical pixels the ring extends out from the windows.
         width 2
@@ -203,7 +203,7 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
+        // off
 
         width 2
         active-color "#ffffff"
@@ -346,9 +346,10 @@ window-rule {
     geometry-corner-radius 20
     shadow {
       on
-      softness 15
-      spread 5
-      color "#000000ff"
+        softness 20
+        spread 5
+        offset x=0 y=5
+        color "#00000080"
     }
 }
 

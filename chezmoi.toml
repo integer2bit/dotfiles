@@ -1,3 +1,0 @@
-encryption = "gpg"
-[gpg]
-    recipient = "587ACD189AC35A3E"
