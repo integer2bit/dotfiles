@@ -62,9 +62,6 @@ sudo pacman -Sy bash-language-server typescript-language-server vscode-html-lang
 - swayidle
 - dms
 - quickshell
-- rofi
-- rofi-emoji
-- thunar (xfce4 file manager), gvfs gvfs-dnssd (trashbin and webdav support) 
 ```bash
 sudo pacman -Sy niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk dms-shell-niri matugen cava qt6-multimedia-ffmpeg swayidle wl-clipboard
 systemctl --user add-wants niri.service dms
