@@ -61,9 +61,10 @@ sudo pacman -Sy bash-language-server typescript-language-server vscode-html-lang
 #### dependencies and tools
 - swayidle
 - dms
-- quickshell
+- quickshell-git
+  - Using quickshell-git provides full feature(like IdleMonitor) support, some builds of quickshell can exclude features based on compilation options.
 ```bash
-sudo pacman -Sy niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk dms-shell-niri matugen cava qt6-multimedia-ffmpeg swayidle wl-clipboard
+sudo pacman -Sy niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk dms-shell-niri matugen cava qt6-multimedia-ffmpeg wl-clipboard
 systemctl --user add-wants niri.service dms
 ```
 

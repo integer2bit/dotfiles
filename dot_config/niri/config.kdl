@@ -6,10 +6,10 @@
 // hide title bar
 prefer-no-csd
 // sway idle
-spawn-at-startup "swayidle" "-w" \
-    "timeout" "1800" "dms ipc call lock lock" \
-    "timeout" "3600" "systemctl suspend" \
-    "before-sleep" "dms ipc call lock lock"
+// spawn-at-startup "swayidle" "-w" \
+//     "timeout" "1800" "dms ipc call lock lock" \
+//     "timeout" "3600" "systemctl suspend" \
+//     "before-sleep" "dms ipc call lock lock"
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
