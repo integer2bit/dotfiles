@@ -5,17 +5,20 @@
 
 // hide title bar
 prefer-no-csd
+
 // sway idle
 // spawn-at-startup "swayidle" "-w" \
 //     "timeout" "1800" "dms ipc call lock lock" \
 //     "timeout" "3600" "systemctl suspend" \
 //     "before-sleep" "dms ipc call lock lock"
 
+// apply x11 config
+spawn-sh-at-startup "xrdb -merge ~/.Xresources"
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
 input {
-    mod-key "Alt"
+    // mod-key "Alt"
     keyboard {
         xkb {
             // You can set rules, model, layout, variant and options.
@@ -403,7 +406,8 @@ binds {
     // Super+L hotkey-overlay-title="Lock the Screen: dmslock" { spawn "sh" "-c" "dms ipc call lock lock && systemctl suspend"; }
     Super+P hotkey-overlay-title="dms powermenu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     Super+V hotkey-overlay-title="dms clipboard" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
-    Super+L hotkey-overlay-title="Lock the Screen: dmslock" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Super+B hotkey-overlay-title="start browser" { spawn "firefox"; }
+    // Super+L hotkey-overlay-title="Lock the Screen: dmslock" { spawn "dms" "ipc" "call" "lock" "lock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -622,8 +626,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+shift+V       { toggle-window-floating; }
+    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,

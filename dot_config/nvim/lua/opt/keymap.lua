@@ -59,5 +59,5 @@ vim.keymap.set("n", "<leader>on", function()
 end, {
 	noremap = true,
 	silent = true,
-	desc = "[O]pen [N]ote",
+	desc = "Create new note",
 })
