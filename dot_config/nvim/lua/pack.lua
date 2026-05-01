@@ -1,4 +1,6 @@
 -- https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack
+-- update plugin `:lua vim.pack.update()`
+-- remove plugin `:lua vim.pack.delete({"plugin name"})`
 vim.pack.add({
 	"https://github.com/nvim-tree/nvim-web-devicons",
 	"https://github.com/stevearc/oil.nvim",
@@ -23,7 +25,6 @@ vim.pack.add({
 
 -- "Register" plugin, but not load it right away
 vim.pack.add({
-	"https://github.com/Olical/conjure",
 	"https://github.com/lervag/vimtex",
 	-- Run ::call mkdp#util#install()call mkdp#util#install() to download compiled binary
 	"https://github.com/iamcco/markdown-preview.nvim",
@@ -33,12 +34,6 @@ vim.pack.add({
 require("nvim-autopairs").setup()
 
 -- Loading plugins with FileType
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "scheme",
-	callback = function()
-		vim.cmd.packadd("conjure")
-	end,
-})
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "tex",
 	callback = function()
