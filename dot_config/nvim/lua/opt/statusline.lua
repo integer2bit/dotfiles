@@ -56,8 +56,6 @@ function M.inactive()
 	return "[%f] %m"
 end
 
-vim.api.nvim_set_hl(0, "StatusLine", { bg = "#14161b", fg = "#d8dee9" })
-
 local group = vim.api.nvim_create_augroup("Statusline", { clear = true })
 
 vim.api.nvim_create_autocmd("DiagnosticChanged", {
@@ -83,5 +81,7 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 		vim.opt_local.statusline = "%!v:lua.require('opt.statusline').inactive()"
 	end,
 })
+
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "#282c34", fg = "#d8dee9" })
 
 return M

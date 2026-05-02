@@ -22,6 +22,9 @@ vim.pack.add({
 	"https://github.com/folke/which-key.nvim",
 	-- "https://github.com/psliwka/termcolors.nvim",
 })
+-- colorscheme
+vim.pack.add({ "https://github.com/navarasu/onedark.nvim" })
+require("onedark").load()
 
 -- "Register" plugin, but not load it right away
 vim.pack.add({
