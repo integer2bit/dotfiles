@@ -18,6 +18,10 @@
       "rev": "dca1a190aa85f9065979ef35802fb77131911106",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "conjure": {
+      "rev": "2ddd752d43b35d72aa3e339c3ae051b8dbad8549",
+      "src": "https://github.com/Olical/conjure"
+    },
     "fzf-lua": {
       "rev": "b437bafc981a180d609bb4092c56ce8999f7a2c4",
       "src": "https://github.com/ibhagwan/fzf-lua"

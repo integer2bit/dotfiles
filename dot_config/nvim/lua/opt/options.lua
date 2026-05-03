@@ -37,7 +37,7 @@ opt.undodir = vim.fn.expand("$HOME/.undo//")
 opt.list = true
 opt.listchars = { leadmultispace = "│ ", multispace = "│ ", tab = "│ " }
 
--- auto create file folders
+-- To auto create file and save when edit new file
 vim.api.nvim_create_autocmd("BufNewFile", {
 	pattern = "*",
 	callback = function()

@@ -33,10 +33,17 @@ vim.pack.add({
 	"https://github.com/iamcco/markdown-preview.nvim",
 	"https://github.com/3rd/image.nvim",
 	"https://github.com/HakonHarnes/img-clip.nvim",
+	"https://github.com/Olical/conjure",
 }, { load = function() end })
 require("nvim-autopairs").setup()
 
 -- Loading plugins with FileType
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "scheme",
+	callback = function()
+		vim.cmd.packadd("conjure")
+	end,
+})
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "tex",
 	callback = function()
@@ -65,3 +72,19 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.cmd("packadd nvim.undotree")
 vim.keymap.set("n", "<leader>u", require("undotree").open)
+
+-- user command
+vim.api.nvim_create_user_command("PackUpdate", function()
+	vim.pack.update()
+end, { desc = "Update managed plugins" })
+vim.api.nvim_create_user_command("PackDelete", function(opts)
+	local package_name = opts.args
+	if package_name == "" then
+		print("Usage: :PackDelete <package_name>")
+		return
+	end
+	vim.pack.del({ package_name })
+end, {
+	nargs = 1,
+	desc = "Delete a specific package",
+})

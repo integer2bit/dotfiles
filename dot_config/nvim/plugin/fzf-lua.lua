@@ -1,54 +1,52 @@
 local actions = require("fzf-lua").actions
 require("fzf-lua").register_ui_select()
-require("fzf-lua").setup(
-{
-			winopts = {
-				fullscreen = true,
-				preview = {
-					wrap = true,
-				},
-			},
-			keymap = {
-				builtin = {
-					["<F1>"] = "toggle-help",
-					["<F2>"] = "toggle-fullscreen",
-					["<c-d>"] = "preview-page-down",
-					["<c-u>"] = "preview-page-up",
-				},
-				fzf = {
-					["ctrl-f"] = "half-page-down",
-					["ctrl-b"] = "half-page-up",
-				},
-			},
-			actions = {
-				files = {
-					["enter"] = actions.file_edit_or_qf,
-					["ctrl-s"] = actions.file_split,
-					["ctrl-v"] = actions.file_vsplit,
-					["ctrl-t"] = actions.file_tabedit,
-					["ctrl-q"] = actions.file_sel_to_qf,
-					["ctrl-Q"] = actions.file_sel_to_ll,
-					["ctrl-h"] = actions.toggle_hidden,
-				},
-			},
-			files = {
-				fd_opts = [[--color=never --hidden --type f --type l --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,.cache,.ghcup,.conda,.rustup,.cargo,.local,.obsidian} --strip-cwd-prefix]],
-			},
-			oldfiles = {
-				prompt = "History❯ ",
-				cwd_only = true,
-				stat_file = true, -- verify files exist on disk
-				include_current_session = false, -- include bufs from current session
-			},
-			buffers = {
-				prompt = "Buffers❯ ",
-				-- winopts = {
-				-- 	fullscreen = false,
-				-- 	preview = { hidden = true },
-				-- },
-			},
-}
-)
+require("fzf-lua").setup({
+	winopts = {
+		fullscreen = true,
+		preview = {
+			wrap = true,
+		},
+	},
+	keymap = {
+		builtin = {
+			["<F1>"] = "toggle-help",
+			["<F2>"] = "toggle-fullscreen",
+			["<c-d>"] = "preview-page-down",
+			["<c-u>"] = "preview-page-up",
+		},
+		fzf = {
+			["ctrl-f"] = "half-page-down",
+			["ctrl-b"] = "half-page-up",
+		},
+	},
+	actions = {
+		files = {
+			["enter"] = actions.file_edit_or_qf,
+			["ctrl-s"] = actions.file_split,
+			["ctrl-v"] = actions.file_vsplit,
+			["ctrl-t"] = actions.file_tabedit,
+			["ctrl-q"] = actions.file_sel_to_qf,
+			["ctrl-Q"] = actions.file_sel_to_ll,
+			["ctrl-h"] = actions.toggle_hidden,
+		},
+	},
+	files = {
+		fd_opts = [[--color=never --hidden --type f --type l --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,.cache,.ghcup,.conda,.rustup,.cargo,.local,.obsidian} --strip-cwd-prefix]],
+	},
+	oldfiles = {
+		prompt = "History❯ ",
+		cwd_only = true,
+		stat_file = true, -- verify files exist on disk
+		include_current_session = false, -- include bufs from current session
+	},
+	buffers = {
+		prompt = "Buffers❯ ",
+		-- winopts = {
+		-- 	fullscreen = false,
+		-- 	preview = { hidden = true },
+		-- },
+	},
+})
 -- keybinding
 local map = vim.keymap.set
 map("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Fuzzy Find files" })
