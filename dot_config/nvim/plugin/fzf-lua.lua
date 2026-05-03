@@ -49,6 +49,7 @@ require("fzf-lua").setup({
 })
 -- keybinding
 local map = vim.keymap.set
+map("n", "<leader>fz", "<cmd>FzfLua<cr>", { desc = "FzfLua" })
 map("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Fuzzy Find files" })
 map("n", "<leader>fr", "<cmd>FzfLua oldfiles<cr>", { desc = "Fuzzy find Oldfiles files" })
 map("n", "<leader>fR", "<cmd>FzfLua resume<cr>", { desc = "Fuzzy Resume" })
@@ -58,6 +59,10 @@ map("n", "<leader>fb", "<cmd>FzfLua buffers<cr>", { desc = "Find Buffer" })
 map("n", "<leader>fc", "<cmd>FzfLua grep_cword<cr>", { desc = "Find string under Cursor in cwd" })
 map("n", '<leader>f"', "<cmd>FzfLua registers<cr>", { desc = "register list" })
 map("n", "<leader>f'", "<cmd>FzfLua marks<cr>", { desc = "mark list" })
+map("n", "<leader>fn", function()
+	local team = vim.fn.expand("<cword>")
+	require("fzf-lua").files({ query = team })
+end, { desc = "Find files by cursor word" })
 -- LSP keybinding
 map("n", "<leader>gr", "<cmd>FzfLua lsp_references<CR>", { desc = "Show LSP references" })
 map("n", "<leader>gd", "<cmd>FzfLua lsp_definitions<CR>", { desc = "Show LSP definitions" })

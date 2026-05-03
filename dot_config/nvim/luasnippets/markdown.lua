@@ -10,6 +10,8 @@ table.insert(
 title: "{}"
 date: {}
 ---
+
+# {}
 ]],
 			{
 				f(function(_, snip)
@@ -17,6 +19,9 @@ date: {}
 				end),
 				f(function()
 					return os.date("%Y-%m-%d %H:%M")
+				end),
+				f(function(_, snip)
+					return snip.env.TM_FILENAME_BASE or ""
 				end),
 			}
 		)
