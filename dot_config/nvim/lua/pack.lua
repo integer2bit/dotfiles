@@ -28,9 +28,8 @@ require("onedark").load()
 
 -- "Register" plugin, but not load it right away
 vim.pack.add({
+	"https://github.com/toppair/peek.nvim",
 	"https://github.com/lervag/vimtex",
-	-- Run ::call mkdp#util#install()call mkdp#util#install() to download compiled binary
-	"https://github.com/iamcco/markdown-preview.nvim",
 	"https://github.com/3rd/image.nvim",
 	"https://github.com/HakonHarnes/img-clip.nvim",
 	"https://github.com/Olical/conjure",
@@ -59,12 +58,24 @@ vim.filetype.add({
 		webp = "image",
 	},
 })
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "markdown", "image" },
 	callback = function()
-		vim.cmd.packadd({ "markdown-preview.nvim" })
+		vim.cmd.packadd({ "peek.nvim" })
 		vim.cmd.packadd({ "image.nvim" })
 		vim.cmd.packadd({ "img-clip.nvim" })
+		-- build mannualy
+		-- cd ~/.local/share/nvim/site/pack/core/opt/peek.nvim
+		-- deno task --quiet build:fast
+		require("peek").setup({
+			app = { "firefox", "--new-window" },
+			theme = "light",
+		})
+		vim.keymap.set("n", "<leader>op", require("peek").open, { desc = "Open markdown preview" })
+		vim.keymap.set("n", "<leader>oP", require("peek").close, { desc = "Close markdown preview" })
+		vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+		vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 		require("image").setup()
 		vim.keymap.set("n", "<leader>p", "<cmd>PasteImage<cr>", { desc = "Paste image from system clipboard" })
 	end,
