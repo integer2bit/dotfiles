@@ -37,7 +37,7 @@ table.insert(
 ---
 title: "{}"
 description: ""
-tags: []
+tags:
 date: {}
 ---
 
