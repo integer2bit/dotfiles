@@ -1,4 +1,4 @@
-# my personal config file
+# My personal config file
 
 - neovim
 - zsh
@@ -22,14 +22,14 @@ cd dotfiles
 chezmoi apply
 ```
 
-## font
+## Fonts
 
 - ttf-jetbrains-mono
 - ttf-jetbrains-mono-nerd
 - noto-fonts-cjk
 
 
-## tmux
+## Tmux
 
 ### Install config
 
@@ -38,14 +38,14 @@ Run `tmux source .tmux.conf` and press \<prefix\>I Install tmux plugins in tmux 
 - prefix set \<C-Space\>
 - \<prefix\>r reload tmux config
 
-## zsh 
+## Zsh 
 - dependencies: [fzf](https://github.com/junegunn/fzf)
 - Installation
   - source .zshrc
   - excute `chsh -s $(which zsh)`
 
 
-## neovim plugins dependencies
+## Neovim plugins dependencies
 
 - tools
 ```bash
@@ -57,7 +57,7 @@ sudo pacman -Sy ripgrep fd fzf git wget unzip gzip nodejs npm python python-pip 
 sudo pacman -Sy bash-language-server typescript-language-server vscode-html-languageserver vscode-json-languageserver vscode-css-languageserver yaml-language-server lua-language-server markdown-oxide prettier shfmt stylua ruff
 ```
 
-## window manager
+## Window manager
 #### dependencies and tools
 - swayidle
 - dms
@@ -68,7 +68,7 @@ sudo pacman -Sy niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-por
 systemctl --user add-wants niri.service dms
 ```
 
-## mpv
+## Mpv
 
 ### Plugins
 - autoload (official)
@@ -77,5 +77,17 @@ systemctl --user add-wants niri.service dms
 - [thumbfast](https://github.com/po5/thumbfast/tree/master)
 - [osc-mordern-f](https://github.com/FinnRaze/mpv-osc-modern-f) 
 - ytdl_hook [reference](https://github.com/hooke007/MPV_lazy/blob/main/portable_config/script-opts/ytdl_hook.conf)
-### play stram vedio with Tampermonkey plugins
+### Play stram vedio with Tampermonkey plugins
 [Play with mpv](https://github.com/LuckyPuppy514/Play-With-MPV)
+
+## Issues
+
+- niri input touchpad dwt may doesn't work. [Issues](https://github.com/rvaiya/keyd/issues/66#issuecomment-985983524)
+  - add a config file with libinput
+  `/etc/libinput/local-overrides.quirks`:
+  ```
+  [Serial Keyboards]
+  MatchUdevType=keyboard
+  MatchName=keyd virtual keyboard
+  AttrKeyboardIntegration=internal
+```
