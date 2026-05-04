@@ -81,3 +81,11 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 })
 -- conseal leavel for markdown
 vim.opt.conceallevel = 2
+
+-- im-select
+vim.api.nvim_create_autocmd("InsertLeave", {
+	pattern = "*",
+	callback = function()
+		vim.fn.jobstart("busctl call --user org.fcitx.Fcitx5 /rime org.fcitx.Fcitx.Rime1 SetAsciiMode b 1")
+	end,
+})

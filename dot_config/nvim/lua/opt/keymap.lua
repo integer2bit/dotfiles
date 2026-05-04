@@ -2,7 +2,14 @@
 -- no highlight
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- toggle fold
-vim.keymap.set("n", "<CR>", "za", { desc = "toggle fold" })
+vim.keymap.set("n", "<CR>", function()
+	local foldlevel = vim.fn.foldlevel(vim.fn.line("."))
+	if foldlevel > 0 then
+		return "za"
+	else
+		return "<CR>"
+	end
+end, { expr = true, desc = "Smart toggle fold" })
 -- https://www.reddit.com/r/vim/comments/3k4cbr/problem_with_gj_and_gk/
 vim.keymap.set("n", "j", [[v:count ? 'j' : 'gj']], { noremap = true, expr = true })
 vim.keymap.set("n", "k", [[v:count ? 'k' : 'gk']], { noremap = true, expr = true })

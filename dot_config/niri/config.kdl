@@ -645,7 +645,7 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
     
     Super+Shift+S { screenshot; }
-    Print { screenshot; }
+    Print { screenshot-screen; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
