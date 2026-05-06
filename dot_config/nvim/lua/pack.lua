@@ -77,7 +77,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
 		vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 		require("image").setup()
-		vim.keymap.set("n", "<leader>p", "<cmd>PasteImage<cr>", { desc = "Paste image from system clipboard" })
+		-- vim.keymap.set("n", "<leader>p", "<cmd>PasteImage<cr>", { desc = "Paste image from system clipboard" })
 	end,
 })
 

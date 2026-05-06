@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 require("opt.keymap")
+require("opt.gx")
 require("opt.options")
 require("opt.lsp")
 require("opt.statusline")
