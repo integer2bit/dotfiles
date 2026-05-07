@@ -4,8 +4,8 @@
 vim.pack.add({
 	"https://github.com/nvim-tree/nvim-web-devicons",
 	"https://github.com/stevearc/oil.nvim",
-	"https://github.com/christoomey/vim-tmux-navigator",
 	"https://github.com/folke/lazydev.nvim",
+	"https://github.com/aserowy/tmux.nvim",
 	-- fzf
 	"https://github.com/ibhagwan/fzf-lua",
 	-- git
@@ -80,7 +80,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		-- vim.keymap.set("n", "<leader>p", "<cmd>PasteImage<cr>", { desc = "Paste image from system clipboard" })
 	end,
 })
-
+require("tmux").setup()
 vim.cmd("packadd nvim.undotree")
 vim.keymap.set("n", "<leader>u", require("undotree").open)
 
