@@ -71,7 +71,27 @@ require("oil").setup({
 		["<C-s>"] = "actions.select_vsplit",
 		-- ["<C-h>"] = "actions.select_split",
 		["<C-t>"] = "actions.select_tab",
-		["<C-p>"] = "actions.preview",
+		["<C-p>"] = {
+			callback = function()
+				require("oil").open_preview({
+					vertical = true,
+					split = "belowright",
+				}, function(err)
+					if err then
+						return
+					end
+
+					for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+						local ok, is_preview = pcall(vim.api.nvim_win_get_var, win, "oil_preview")
+						if ok and is_preview then
+							vim.api.nvim_win_set_width(win, math.floor(vim.o.columns * 0.75))
+							break
+						end
+					end
+				end)
+			end,
+			desc = "Open preview right at 60% width",
+		},
 		["<C-c>"] = "actions.close",
 		["<C-r>"] = "actions.refresh",
 		["<leader>e"] = "actions.parent",
