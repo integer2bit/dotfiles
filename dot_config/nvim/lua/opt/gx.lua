@@ -173,9 +173,7 @@ local function paste_pdf_link()
 		return
 	end
 	local path = filepath
-	if path:match("^~/") then
-		path = vim.fn.expand(path)
-	elseif not path:match("^/") then
+	if not path:match("^~/") and not path:match("^/") then
 		path = vim.fn.fnamemodify(path, ":p")
 	end
 	local link = "[text](pdf:" .. path .. "#" .. page .. ")"
