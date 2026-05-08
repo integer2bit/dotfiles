@@ -74,7 +74,7 @@ require("oil").setup({
 		["<C-p>"] = "actions.preview",
 		["<C-c>"] = "actions.close",
 		["<C-r>"] = "actions.refresh",
-		["<Tab>"] = "actions.parent",
+		["<leader>e"] = "actions.parent",
 		["_"] = "actions.open_cwd",
 		["<leader>cd"] = "actions.cd",
 		["~"] = "actions.tcd",
@@ -155,4 +155,4 @@ require("oil").setup({
 		border = "rounded",
 	},
 })
-vim.keymap.set("n", "<Tab>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })

@@ -228,7 +228,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile", "FileType" }, {
 	callback = function()
 		-- set conceal options for this window
 		vim.wo.conceallevel = 2
-		vim.wo.concealcursor = "i"
+		vim.wo.concealcursor = ""
 
 		-- conceal "(pdf:path#page)" entirely, hiding the URL and page
 		-- this works with the built-in markdown conceal that already hides []

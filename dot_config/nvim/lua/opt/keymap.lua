@@ -1,8 +1,13 @@
 -- keymap
 -- no highlight
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+-- distinguish <Tab> from <C-I> in terminals with CSI-u/extended-key support
+-- Both must be mapped separately, otherwise Nvim treats them as equivalent.
+vim.keymap.set("n", "<C-I>", function()
+	vim.cmd("normal! " .. vim.v.count1 .. "\t")
+end, { desc = "Jump newer in jumplist" })
 -- toggle fold
-vim.keymap.set("n", "<CR>", function()
+vim.keymap.set("n", "<Tab>", function()
 	local foldlevel = vim.fn.foldlevel(vim.fn.line("."))
 	if foldlevel > 0 then
 		return "za"
