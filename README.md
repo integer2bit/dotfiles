@@ -54,8 +54,8 @@ sudo pacman -Sy ripgrep fd fzf git wget unzip gzip nodejs npm python python-pip 
 
 - Language server and formatter
 ```bash
-sudo pacman -Sy bash-language-server typescript-language-server yaml-language-server lua-language-server markdown-oxide prettier shfmt stylua ruff
-sudo npm install -g vscode-langservers-extracted
+sudo pacman -Sy bash-language-server typescript-language-server yaml-language-server lua-language-server markdown-oxide shfmt stylua ruff
+sudo npm install -g vscode-langservers-extracted prettier
 ```
 
 ## Window manager

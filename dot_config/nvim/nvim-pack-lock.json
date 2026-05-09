@@ -66,10 +66,6 @@
       "rev": "5820d937d5414baea5f586dc2a3d912a74636e5b",
       "src": "https://github.com/toppair/peek.nvim"
     },
-    "tmux.nvim": {
-      "rev": "32ceaf2793582955ef9576809730878c4d2d9426",
-      "src": "https://github.com/aserowy/tmux.nvim"
-    },
     "tree-sitter-manager.nvim": {
       "rev": "33a94d022e3a5a500d878b784ba7fec61559c70a",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"

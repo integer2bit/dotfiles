@@ -162,7 +162,7 @@ alias cdn='cd $HOME/Documents/notes/'
 alias rcsync='rclone bisync ~/Documents/notes/ personal:/notes/ --backup-dir1 ~/Documents/notes_bak --backup-dir2 personal:/backup/notes_bak/  --conflict-resolve newer -vP'
 alias rimeupload='rclone sync -v /mnt/win/Users/world/AppData/Roaming/Rime/sync/ personal:/rime/sync'
 alias rimedownload='rclone copy -v personal:/rime/sync /home/world/Downloads/rimesync'
-
+alias kssh='kitty +kitten ssh'
 ## xrandr(xorg) --output eDP --mode 2880x1800 --scale 0.5x0.5
 # alias xon='xrandr --output eDP --auto'
 # alias xoff='xset dpms force off'
