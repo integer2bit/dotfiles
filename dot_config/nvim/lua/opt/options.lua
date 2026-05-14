@@ -89,3 +89,10 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.fn.jobstart("busctl call --user org.fcitx.Fcitx5 /rime org.fcitx.Fcitx.Rime1 SetAsciiMode b 1")
 	end,
 })
+
+--- :Restart to restart neovim and restore it as you left it
+vim.api.nvim_create_user_command("Restart", function()
+	local restart_session_file = vim.fn.stdpath("state") .. "/restart-session.vim"
+	vim.cmd("mksession! " .. vim.fn.fnameescape(restart_session_file))
+	vim.cmd("restart source " .. vim.fn.fnameescape(restart_session_file))
+end, {})

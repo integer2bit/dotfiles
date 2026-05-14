@@ -17,6 +17,11 @@ else
   #export EDITOR=/usr/local/bin/nvim
   export MANPAGER='nvim +Man!'
 fi
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 export VISUAL=nvim
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -58,7 +63,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 if [ "$(id -u)" -eq 0 ]; then
   PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 else
-  PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:/bin:$HOME/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+  PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:/bin:$HOME/.nix-profile/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/share/pnpm:$HOME/.local/share/npm/bin"
 fi
 export PATH
 

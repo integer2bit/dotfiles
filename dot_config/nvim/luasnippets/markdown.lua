@@ -1,5 +1,10 @@
 ---@diagnostic disable: undefined-global
 local snippets = {}
+
+local function iso_date()
+	return os.date("%Y-%m-%d")
+end
+
 table.insert(
 	snippets,
 	s(
@@ -18,7 +23,7 @@ date: {}
 					return snip.env.TM_FILENAME_BASE or ""
 				end),
 				f(function()
-					return os.date("%Y-%m-%d %H:%M")
+					return iso_date()
 				end),
 				f(function(_, snip)
 					return snip.env.TM_FILENAME_BASE or ""
@@ -37,7 +42,6 @@ table.insert(
 ---
 title: "{}"
 description: ""
-tags:
 date: {}
 ---
 
@@ -48,7 +52,7 @@ date: {}
 					return snip.env.TM_FILENAME_BASE or ""
 				end),
 				f(function()
-					return os.date("%Y-%m-%d %H:%M")
+					return iso_date()
 				end),
 				f(function(_, snip)
 					return snip.env.TM_FILENAME_BASE or ""
@@ -68,7 +72,7 @@ last modified: {}
 ]],
 			{
 				f(function()
-					return os.date("%Y-%m-%d %H:%M")
+					return iso_date()
 				end),
 			}
 		)
