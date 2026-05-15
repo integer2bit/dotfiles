@@ -82,6 +82,11 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 -- conseal leavel for markdown
 vim.opt.conceallevel = 2
 
+-- show current file path
+vim.api.nvim_create_user_command("Pwd", function()
+	print(vim.fn.expand("%:p"))
+end, { desc = "Print current file directory" })
+
 -- im-select
 vim.api.nvim_create_autocmd("InsertLeave", {
 	pattern = "*",
