@@ -7,6 +7,16 @@
 prefer-no-csd
 
 // sway idle
+spawn-at-startup "swayidle" "-w" \
+    "timeout" "1800" "swaylock -f -c 000000" \
+    "timeout" "3600" "systemctl suspend" \
+    "before-sleep" "swaylock -f -c 000000"
+// wallpaper
+spawn-at-startup "swaybg" "-i" "/home/world/.config/niri/Yanami.jpg" "-m" "fill"
+// clipboard
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+// sway idle
 // spawn-at-startup "swayidle" "-w" \
 //     "timeout" "1800" "dms ipc call lock lock" \
 //     "timeout" "3600" "systemctl suspend" \
@@ -402,13 +412,16 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     // Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: spotlight" {spawn "dms" "ipc" "call" "spotlight" "toggle";}
-    Mod+Z hotkey-overlay-title="toggle bar" {spawn "dms" "ipc" "call" "bar" "toggle" "index" "0";}
+    // Mod+D hotkey-overlay-title="Run an Application" {spawn "fuzzel";}
+    Mod+D hotkey-overlay-title="Run an Application" { spawn "rofi" "-show" "drun"; }
+    // Mod+D hotkey-overlay-title="Run an Application" {spawn "dms" "ipc" "call" "spotlight" "toggle";}
+    // Mod+Z hotkey-overlay-title="toggle bar" {spawn "dms" "ipc" "call" "bar" "toggle" "index" "0";}
     // Super+N hotkey-overlay-title="open notifications" {spawn "dms" "ipc" "call" "notifications" "open";}
     Super+E hotkey-overlay-title="Run file manager" { spawn "nautilus"; }
     // Super+L hotkey-overlay-title="Lock the Screen: dmslock" { spawn "sh" "-c" "dms ipc call lock lock && systemctl suspend"; }
-    Super+P hotkey-overlay-title="dms powermenu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
-    Super+V hotkey-overlay-title="dms clipboard" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    // Super+P hotkey-overlay-title="dms powermenu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    // Super+V hotkey-overlay-title="dms clipboard" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Super+V hotkey-overlay-title="Clipboard History" { spawn-sh "cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy"; }
     Super+B hotkey-overlay-title="start browser" { spawn "firefox"; }
     // Super+L hotkey-overlay-title="Lock the Screen: dmslock" { spawn "dms" "ipc" "call" "lock" "lock"; }
 
@@ -669,4 +682,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-include "dms/cursor.kdl"
+// include "dms/cursor.kdl"

@@ -4,7 +4,8 @@
 - zsh
 - tmux
 - mpv
-- niri with dms
+- niri
+- rofi
 - keyd
 - aria2
 - zathura
@@ -59,14 +60,12 @@ sudo npm install -g vscode-langservers-extracted prettier
 ```
 
 ## Window manager
+
 #### dependencies and tools
-- swayidle
-- dms
-- quickshell-git
-  - Using quickshell-git provides full feature(like IdleMonitor) support, some builds of quickshell can exclude features based on compilation options.
+
+- swayidle, swaylock, rofi, cliphist, blueberry
 ```bash
-sudo pacman -Sy niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk dms-shell-niri matugen cava qt6-multimedia-ffmpeg wl-clipboard
-systemctl --user add-wants niri.service dms
+sudo pacman -Sy niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk matugen cava qt6-multimedia-ffmpeg wl-clipboard swayidle swaylock rofi cliphist blueberry
 ```
 
 ## Mpv
