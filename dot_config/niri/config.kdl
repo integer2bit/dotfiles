@@ -12,7 +12,7 @@ spawn-at-startup "swayidle" "-w" \
     "timeout" "3600" "systemctl suspend" \
     "before-sleep" "swaylock -f -c 000000"
 // wallpaper
-spawn-at-startup "swaybg" "-i" "/home/world/.config/niri/Yanami.jpg" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "/home/world/.config/niri/ScarletTree.png" "-m" "fill"
 // clipboard
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
