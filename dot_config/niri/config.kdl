@@ -414,6 +414,7 @@ binds {
     // Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     // Mod+D hotkey-overlay-title="Run an Application" {spawn "fuzzel";}
     Mod+D hotkey-overlay-title="Run an Application" { spawn "rofi" "-show" "drun"; }
+    Mod+Z hotkey-overlay-title="Run an Application" { spawn "rofi" "-show" "status"; }
     // Mod+D hotkey-overlay-title="Run an Application" {spawn "dms" "ipc" "call" "spotlight" "toggle";}
     // Mod+Z hotkey-overlay-title="toggle bar" {spawn "dms" "ipc" "call" "bar" "toggle" "index" "0";}
     // Super+N hotkey-overlay-title="open notifications" {spawn "dms" "ipc" "call" "notifications" "open";}
